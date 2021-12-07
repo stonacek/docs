@@ -1,3 +1,3 @@
 # Validator Info
 
-Coming Soon
+Info in Process
