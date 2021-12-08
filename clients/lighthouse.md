@@ -7,4 +7,4 @@ More info coming soon
 [Lighthouse](https://lighthouse.sigmaprime.io): A fast and secure client written in Rust.
 
 * GBC Lighthouse Repo with deployment instructions:\
-  [https://github.com/gnosischain/sbc-lighthouse-launch](https://github.com/gnosischain/sbc-lighthouse-launch)&#x20;
+  [https://github.com/gnosischain/lighthouse-launch](https://github.com/gnosischain/lighthouse-launch)

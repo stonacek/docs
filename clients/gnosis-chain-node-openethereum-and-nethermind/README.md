@@ -10,8 +10,8 @@ While it is possible to link GBC to an existing node using a JSON RPC endpoint, 
 * Disk: 50gb SSD
 * Git installed `git --version`
 
-The following instructions are for the xDai chain setup. Instructions will be updated to reflect the naming change, but remain the same in other regards.
+The following instructions are for the xDai chain setup. Instructions will be updated at some point to reflect the naming change, for now instructions are followed as is.
 
-[-> Nethermind Node Setup](https://www.xdaichain.com/for-developers/install-xdai-client/nethermind)
+[-> Nethermind Node Setup](nethermind-node-setup.md)
 
-[-> OpenEthereum Node Setup](https://www.xdaichain.com/for-developers/install-xdai-client/parity)
+[-> OpenEthereum Node Setup](openethereum-node-setup.md)
