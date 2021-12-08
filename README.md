@@ -4,7 +4,7 @@ Gnosis Beacon Chain (GBC) brings vital canary network functionality to the burge
 
 GBC will serve as a final frontrunner prior to important Ethereum 2.0 updates. For example, the merge will first take place on testnets, then in a production-level, real-world value environment (GBC) approximately 1 week prior to Ethereum deployment. This final walkthrough will help uncover any overlooked issues and provide a confidence check prior to launch.
 
-Validating GBC will only require the equivalent of a single GNO token\*, opening up validation opportunities for a diverse group of individuals across the globe.
+Validating GBC will only require the equivalent of a single GNO token\*, opening up validation opportunities for diverse groups of individuals across the globe.
 
 _\*1 GNO equivalent. Staking will utilize the mGNO token, where 32 mGNO are equal to 1 GNO._
 

@@ -9,4 +9,4 @@ GBC is supported by 2 clients; validators can choose which client they prefer to
 
     * GBC Prysm repo with deployment instructions: [https://github.com/gnosischain/sbc-prysm-launch](https://github.com/gnosischain/sbc-prysm-launch)
 
-    In addition to the GBC client, validators will also need to operate or connect to an operational Gnosis Chain (native xDai) node running Nethermind or OpenEthereum.
+    In addition to the GBC client, validators will also need to operate or connect to an operational Gnosis Chain (native xDai) node running Nethermind or OpenEthereum. [More information available here](gnosis-chain-node-openethereum-and-nethermind.md).
