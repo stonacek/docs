@@ -8,5 +8,7 @@ Validating GBC will only require the equivalent of a single GNO token\*, opening
 
 _\*1 GNO equivalent. Staking will utilize the mGNO token, where 32 mGNO are equal to 1 GNO._
 
+__
+
 
 

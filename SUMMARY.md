@@ -11,5 +11,5 @@
   * [Validator Requirements & Responsibilities](validator-info/validator-requirements-and-responsibilities.md)
   * [Technical Requirements](validator-info/technical-requirements.md)
   * [Get Started](validator-info/get-started.md)
-* [Chain Parameters](chain-parameters.md)
+* [Beacon Chain Parameters](beacon-chain-parameters.md)
 * [Security Audit](security-audit.md)
