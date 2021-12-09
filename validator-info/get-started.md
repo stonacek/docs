@@ -9,7 +9,7 @@ If you are interested in running a node in the future, please [fill out this for
 ### -Instructions in Development -&#x20;
 
 {% hint style="danger" %}
-Instructions are in process and not yet complete. Testnet implementation only. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
+Instructions are in process and not yet complete. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
 {% endhint %}
 
 ## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
@@ -56,7 +56,8 @@ Current instructions use Sokol testnet implementation_._&#x20;
 
 ### Prysm
 
-* Follow the instructions here: [https://github.com/openethereum/sbc-prysm-launch/tree/gbc-testnet](https://github.com/openethereum/sbc-prysm-launch/tree/gbc-testnet)
+* Follow the instructions here: \
+  [https://github.com/gnosischain/prysm-launch/tree/master](https://github.com/gnosischain/prysm-launch/tree/master)
 * [Prysm Discord for questions](https://discord.gg/z9efH7e)
 
 Once complete, check the sync status of your node:
@@ -73,7 +74,8 @@ curl http://localhost:3500/eth/v1alpha1/node/syncing
 
 ### Lighthouse
 
-* Follow the instructions here: [https://github.com/openethereum/sbc-lighthouse-launch/tree/gbc-testnet](https://github.com/openethereum/sbc-lighthouse-launch/tree/gbc-testnet)
+* Follow the instructions here: \
+  [https://github.com/gnosischain/lighthouse-launch](https://github.com/gnosischain/lighthouse-launch)
 * [Lighthouse Discord server for questions](https://discord.gg/uC7TuaH)
 
 ### **Verify your connection**
@@ -92,7 +94,7 @@ http://<YourServerLocation>:8545
 Staking contract UI in process
 {% endhint %}
 
-Staking will require two transactions. The first will wrap GNO deposit tokens into 32 mGNO metaTokens. The second will deposit mGNO using the  `transferAndCall` method).
+Staking will require two transactions. The first wraps GNO deposit tokens into 32 mGNO metaTokens. The second deposits mGNO using the  `transferAndCall` method).
 
 ## 5) Check status
 
