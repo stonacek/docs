@@ -2,6 +2,10 @@
 
 ### **Contracts & Token Addresses**
 
+{% hint style="warning" %}
+**Do not send funds directly to the GBC Deposit Contract. To Stake on GBC, follow the Validator instructions starting with** [**Validator Requirements and Responsibilities**](validator-info/validator-requirements-and-responsibilities.md)**.**
+{% endhint %}
+
 | Contract                   | Address                                                                                                                                            |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GBC Deposit Contract       | [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://blockscout.com/xdai/mainnet/address/0x0B98057eA310F4d31F2a452B414647007d1645d9)               |

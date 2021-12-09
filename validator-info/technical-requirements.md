@@ -2,7 +2,7 @@
 
 ## The Basics
 
-Since GBC is a smaller-stakes environment, it is a great place to refine new skills. Be sure to read directions and ask questions if they come up! &#x20;
+Since GBC is a smaller-stakes environment, it is a great place to refine new skills. Be sure to read instructions carefully and ask questions (dedicated discord channel coming soon) as needed.
 
 * **Using the Terminal**:  You will be required to enter commands into a terminal window. These will be simple copy-paste instructions, but familiarity with using a terminal is helpful.&#x20;
 * **Key Management**: You will use the command line to derive a key-pair for validating blocks as well as a mnemonic you will use later to derive a withdrawal pair. It is important to store these safely (offline highly recommended).
@@ -59,10 +59,10 @@ Press `Ctrl+A+D` to leave the `screen`
 ## Node Requirements
 
 {% hint style="info" %}
-Recommended requirements are met when using DappNode preconfigured hardware.
+Recommended requirements are met when using DappNode preconfigured hardware or a liquid staking service.
 {% endhint %}
 
-### Gnosis (formerly xDai) Node
+### Gnosis (formerly xDai) Node Requirements
 
 To process validator deposits it is recommended to run your own Gnosis node. It will be possible to link GBC to an existing node through a JSON RPC endpoint, however we recommend running your own node to enhance decentralization. Gnosis Nodes can be run with you choice of 2 clients (OpenEthereum and Nethermind) and the following recommended minimum specs:
 
@@ -76,7 +76,7 @@ To process validator deposits it is recommended to run your own Gnosis node. It 
 
 [-> OpenEthereum Node Setup ](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
-### Beacon Chain Node
+### Beacon Chain Node Requirements
 
 Minimum & Recommended specifications for running Prysm or Lighthouse clients:
 

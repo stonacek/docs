@@ -14,10 +14,11 @@ Before getting started, it is important to have an understanding of your respons
 
 On GBC you can validate blocks with a more reasonable staking amount, providing security and receiving rewards (or penalties) as you would with Eth2. Primary points to consider:
 
-* The validator deposit is a **non-reversible, one-way transaction**. Withdrawal will not be possible until the Gnosis Chain (formerly xDai Chain) merge occurs.
-* You are **responsible for your node**, including ensuring uptime, correct behavior, and monitoring. If your node is not responding properly, or is displaying dishonest behavior (like running keys on 2 nodes at the same time), you will be penalized in the form of deposit slashing.
-* You are **responsible for your keys** (deriving and storing your keys and mnemonic securely). If you lose, or your keys are compromised, there is no recourse to recover your funds.
-* You provide decentralization and security for the network. **You are vital to the proper functioning of GBC**.
+1. The validator deposit is a **non-reversible, one-way transaction**. Withdrawal will not be possible until the Gnosis Chain (formerly xDai Chain) merge occurs.
+2. You are **responsible for your node**, including ensuring uptime, correct behavior, and monitoring. If your node is not responding properly, or is displaying dishonest behavior (like running keys on 2 nodes at the same time), you will be penalized in the form of deposit slashing.
+3. You are **responsible for your keys** (deriving and storing your keys and mnemonic securely). If you lose, or your keys are compromised, there is no recourse to recover your funds.
+4. You will follow the instructions and processes outlined here or with a provider of your choosing (ie DAppNode or Liquid Staking provider). **Failure to follow instructions correctly can result in lost funds.**
+5. You provide decentralization and security for the network. **You are vital to the proper functioning of GBC**.
 
 If you are ready to proceed, please see the technical prerequisites which include hardware requirements to get started.
 
