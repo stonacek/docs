@@ -7,9 +7,9 @@ Making a deposit requires 2 steps. First, GNO must be converted to mGNO. For eve
 ### 1) Convert GNO to mGNO
 
 1. Go to the GNO token contract on BlockScout and connect your web 3 wallet (MetaMask or other). The wallet must contain GNO and some xDai to process the transaction. [https://blockscout.com/xdai/mainnet/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/transactions](https://blockscout.com/xdai/mainnet/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/transactions)
-2. Select the “Write Proxy” tab.\
+2. Select the **Write Proxy** tab.\
    ![](../.gitbook/assets/write-proxy.png)
-3. Scroll to the `transferAndCall` method. Enter the conversion contract (`0x647507a70ff598f386cb96ae5046486389368c66`) in the `_to` field and amount of GNO tokens to convert in `_value` (in Wei). Enter `0x` in the   `_data` field.\
+3. Scroll to 5. `transferAndCall` method. Input the GNO->mGNO conversion contract (`0x647507a70ff598f386cb96ae5046486389368c66`) in the `_to` field, the amount of GNO tokens to convert in `_value` (in Wei) and enter `0x` in the   `_data` field.\
    ![](../.gitbook/assets/transfer-and-call.png)
 4. Press **Write**, confirm the transaction in your wallet, and wait for it to be included in a block.
 5. Check the balance of the account for the corresponding amount of mGNO. The token address for mGNO is [0x722fc4DAABFEaff81b97894fC623f91814a1BF68](https://blockscout.com/xdai/mainnet/token/0x722fc4DAABFEaff81b97894fC623f91814a1BF68/token-transfers)
