@@ -11,5 +11,6 @@
   * [Validator Requirements & Responsibilities](validator-info/validator-requirements-and-responsibilities.md)
   * [Technical Requirements](validator-info/technical-requirements.md)
   * [Get Started](validator-info/get-started.md)
+  * [Validator Deposits](validator-info/validator-deposits.md)
 * [Contracts, Addresses, Parameters](contracts-addresses-parameters.md)
 * [Security Audit](security-audit.md)

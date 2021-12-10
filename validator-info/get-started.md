@@ -8,8 +8,8 @@ If you are interested in running a node in the future, please [fill out this for
 
 ### -Instructions in Development -&#x20;
 
-{% hint style="danger" %}
-Instructions are in process and not yet complete. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
+{% hint style="warning" %}
+Instructions are in process. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
 {% endhint %}
 
 ## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
@@ -19,88 +19,109 @@ You can select either OpenEthereum or Nethermind as your client of choice. Follo
 * [Nethermind](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
 * [OpenEthereum](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
-## 2) Generate a validator account using the deposit CLI
-
-These instructions use native python, see the `Readme` for other options.
-
-1. git clone  [https://github.com/gnosischain/deposit-cli](https://github.com/gnosischain/deposit-cli) and cd into sbc-deposit-cli root folder.&#x20;
-2.  Check you are using Python Version >= Python3.7
-
-    ```
-    python3 -V
-    ```
-3.  Run the helper script to install dependencies
-
-    ```
-    ./deposit.sh install
-    ```
-4.  Run the following command to access the interactive CLI
-
-    ```
-    ./deposit.sh new-mnemonic --chain stake
-    ```
-5. Generate your keys following the prompts.
-   1. Choose how many validators you want to run.
-   2. Choose a password to store validator keystore(s) (you will need this password later for beacon client implementation, so save securely).
-   3. Write down your 24 word mnemonic (KEEP OFFLINE).
-   4. Confirm you mnemonic.
-   5. Deposit data and keystore.json files will be created in a newly created validator\_keys folder.
-
-## 3) Choose Beacon Chain Client and Setup a Validator Node
-
-Current instructions use Sokol testnet implementation_._&#x20;
+## 2) Generate Validator Account(s) and Deposit Data
 
 {% hint style="warning" %}
-**Node should be completely synced before proceeding to step 4: Deposit Staking Token.** _Sync check instructions below._
+It is highly recommended to generate keystores on a safe, completely offline device.
+
+Securely backup your mnemonic, keystores, and password and keep in a safe place.
+{% endhint %}
+
+1.  Pull the docker image for the data generator.
+
+    ```
+    docker pull ghcr.io/gnosischain/validator-data-generator:latest
+    ```
+2.  If there is no an existing mnemonic to generate keystores and deposit data, use the following command:
+
+    ```
+    docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
+      ghcr.io/gnosischain/validator-data-generator:latest new-mnemonic \
+      --num_validators=NUM --mnemonic_language=english --chain=gnosis \
+      --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
+    ```
+
+    otherwise the mnemonic can be prompted during execution like this:
+
+    ```
+    docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
+      ghcr.io/gnosischain/validator-data-generator:latest existing-mnemonic \
+      --validator_start_index=START_NUM --num_validators=NUM --chain=gnosis \
+      --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
+    ```
+
+    * `NUM` The number of signing keys (validators) to generate.
+    * `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
+    * `WITHDRAWAL_ADDRESS`  Use this parameter to provide an xDai `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
+
+    More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
+
+    After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.
+
+## 3) Import Validator Keys
+
+{% hint style="info" %}
+To begin, determine which client you want to run, Lighthouse or Prysm. Instructions differ for the 2 clients.
+
+Make sure your machine conforms to the [Technical Requirements](technical-requirements.md#beacon-chain-node-requirements) for running a node.
 {% endhint %}
 
 ### Prysm
 
-* Follow the instructions here: \
-  [https://github.com/gnosischain/prysm-launch/tree/master](https://github.com/gnosischain/prysm-launch/tree/master)
-* [Prysm Discord for questions](https://discord.gg/z9efH7e)
+The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however the original Prysm binary will not work as expected for the Gnosis Chain implementation.
 
-Once complete, check the sync status of your node:
+1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
+2.  Clone the repo that includes the required configs.
 
-```
-curl http://localhost:3500/eth/v1alpha1/node/syncing
-```
+    ```
+    git clone https://github.com/gnosischain/prysm-launch.git gbc
+    ```
+3. Switch to the cloned directory: `cd gbc`.
+4. Copy validators’ keystore files generated in _Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
+5. Write the keystore password to the `keys/keystore_password.txt` file.
+6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as wallet\_password.txt. This password will be used by Prysm to access the private keys of validators following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
+7. Create an `.env` file from the example at `.env.example`. Fill in the valid external IP address of your node and xDAI RPC url in the config. Other values can remain unchanged.
+8.  Run the following command to import all added keystore files:
 
-&#x20;If your node is done synchronizing, you will see the response:
-
-```
- {"syncing":false}
-```
+    ```
+    docker-compose up validator-import; docker-compose down
+    ```
 
 ### Lighthouse
 
-* Follow the instructions here: \
-  [https://github.com/gnosischain/lighthouse-launch](https://github.com/gnosischain/lighthouse-launch)
-* [Lighthouse Discord server for questions](https://discord.gg/uC7TuaH)
+The Lighthouse client has been modified to account for consensus parameters specific to the Gnosis Chain. The original Lighthouse binary will not work; use the configured client below.
 
-### **Verify your connection**
+1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
+2.  Clone the repo that includes the required configs.
 
-Verify the connection between your SBC beacon node and client.
+    ```
+    git clone https://github.com/gnosischain/lighthouse-launch.git gbc
+    ```
+3. Switch to the cloned directory: `cd gbc`.
+4. Copy validators’ keystore files generated on _the Step 2_ to the `keys/validator_keys` directory. Ensure that copied keystores are only used on a single node.
+5. Write the keystore password to the `keys/keystore_password.txt` file.
+6. Create `.env` file from the example at `.env.example`. Put the valid external IP address of your node and xDAI RPC url in the config. Other values can be left without changes.
+7.  Run the following command to import and all added keystore files:
 
-```json
- curl -H "Content-Type: application/json" -X POST --data
-'{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 
-http://<YourServerLocation>:8545
+    ```
+    docker-compose up validator-import; docker-compose down
+    ```
+
+## 4) Run the Beacon Chain node with the attached Validator Process&#x20;
+
+On the same machine as in _the Step 3_ run the following commands (works for both Lighthouse and Prysm):
+
+```
+docker-compose up -d node
+docker-compose up -d validator
 ```
 
-## 4) Deposit staking token&#x20;
+Observe the logs by `docker-compose logs -f node` to check that the node started successfully.
 
-{% hint style="info" %}
-Staking contract UI in process
-{% endhint %}
+A similar command can be used to look at the validator process logs: `docker-compose logs -f validator`. But since deposits have not been made to the validators yet, there should not be much activity yet.
 
-Staking will require two transactions. The first wraps GNO deposit tokens into 32 mGNO metaTokens. The second deposits mGNO using the  `transferAndCall` method).
+## 5) Make a Deposit
 
-## 5) Check status
+Making deposits is a 2 part process. See the [Validator Deposits section](validator-deposits.md) for details.
 
-&#x20;[https://beacon.blockscout.com/ ](https://beacon.blockscout.com)
-
-Install Prometheus and Grafana Monitoring:
-
-* Lighthouse [https://github.com/sigp/lighthouse-metrics](https://github.com/sigp/lighthouse-metrics)
-* Prysm [https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard/](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard/)
+##
