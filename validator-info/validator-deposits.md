@@ -4,6 +4,12 @@ Once you have followed the steps to [Get Started](get-started.md) and your Beaco
 
 Making a deposit requires 2 steps. First, GNO must be converted to mGNO. For every 1 GNO, you will receive 32 mGNO.&#x20;
 
+{% hint style="warning" %}
+Deposits occur on the Gnosis Chain (formerly xDai Chain). **If you have GNO on Ethereum mainnet, you will need to first bridge it to the GC**. \
+\
+[Use the OmniBridge](https://omni.xdaichain.com/bridge) to move GNO from Ethereum to GNO on GC.&#x20;
+{% endhint %}
+
 ### 1) Convert GNO to mGNO
 
 1. Go to the GNO token contract on BlockScout and connect your web 3 wallet (MetaMask or other). The wallet must contain GNO and some xDai to process the transaction. [https://blockscout.com/xdai/mainnet/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/transactions](https://blockscout.com/xdai/mainnet/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/transactions)
