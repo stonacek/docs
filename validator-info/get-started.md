@@ -42,7 +42,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
       --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
     ```
 
-    N_ote: `/path/to/validator_keys` should be a valid path. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)_\
+    N_ote: `/path/to/` should be replaced with a valid path where you want to create the validator\_keys folder. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)_\
     \
     \
     otherwise you can prompt the mnemonic during execution:&#x20;
