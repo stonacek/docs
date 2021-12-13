@@ -12,5 +12,6 @@
   * [Technical Requirements](validator-info/technical-requirements.md)
   * [Get Started](validator-info/get-started.md)
   * [Validator Deposits](validator-info/validator-deposits.md)
+* [Incentives](incentives.md)
 * [Contracts, Addresses, Parameters](contracts-addresses-parameters.md)
 * [Security Audit](security-audit.md)
