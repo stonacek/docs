@@ -32,7 +32,8 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
     ```
     docker pull ghcr.io/gnosischain/validator-data-generator:latest
     ```
-2.  If there is no an existing mnemonic to generate keystores and deposit data, use the following command:
+2.  If this is your first time running the process and there is no an existing mnemonic to generate keystores and deposit data, use the following command:\
+    __
 
     ```
     docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
@@ -41,7 +42,10 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
       --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
     ```
 
-    otherwise the mnemonic can be prompted during execution like this:
+    N_ote: `/path/to/validator_keys` should be a valid path. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)_\
+    \
+    \
+    otherwise you can prompt the mnemonic during execution:&#x20;
 
     ```
     docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
