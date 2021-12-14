@@ -48,6 +48,8 @@ A modification to the Gnosis Chain deposit contract allows you to deposit in bat
     TOKEN_ADDRESS=0x722fc4DAABFEaff81b97894fC623f91814a1BF68
     # address of the Gnosis Chain deposit contract
     DEPOSIT_CONTRACT_ADDRESS=0x0B98057eA310F4d31F2a452B414647007d1645d9 
+    # block where the deposit contract was deployed at
+    START_BLOCK_NUMBER=19469077
     ```
 
     `STAKING_ACCOUNT_PRIVATE_KEY` is the private key of the account which holds the necessary amount of mGNO tokens for deposit. Any account may be used for funding, but it must also have a small amount of xDai to process transactions. In the above example, 2 transactions will occur with 256 total deposits of 32 mGNO. \
