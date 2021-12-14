@@ -24,9 +24,7 @@ Much like Ethereum, Gnosis Chain will continue to run in its current form until 
 
 After the merge, validators (stakers) on the GBC will begin validating transactions on the Gnosis Chain; the Gnosis Chain will become a shard within the larger GBC infrastructure.
 
-Much more information on Gnosis Chain, usage, and applications is available on the [GC (formerly xDai) site](https://www.xdaichain.com).
-
-In addition, here are a few fast resources related to GC
+Much more information on Gnosis Chain, usage, and applications is available on the [GC (formerly xDai) site](https://www.xdaichain.com). In addition, here are a few quick links to GC-relevant resources.
 
 * [Gnosis Chain Block Explorer](https://blockscout.com/xdai/mainnet/)
 * [Applications running on GC](https://www.xdai.world) (DeFi, Games, DAOs, NFTs etc)
