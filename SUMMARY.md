@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [GBC Introduction](README.md)
 * [Clients](clients/README.md)
   * [Lighthouse](clients/lighthouse.md)
   * [Prysm](clients/prysm.md)
