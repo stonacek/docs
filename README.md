@@ -22,7 +22,7 @@ Gnosis Chain (formerly the xDai Chain) is the supported EVM chain for stable tra
 
 Much like Ethereum, Gnosis Chain will continue to run in its current form until the merge with the Gnosis Beacon Chain. This is planned for \~ 1 week prior to the Ethereum 2 merge.
 
-After the merge, validators (stakers) on the GBC will begin validating transactions on the Gnosis Chain, and the Gnosis Chain will become a shard within the larger GBC infrastructure.
+After the merge, validators (stakers) on the GBC will begin validating transactions on the Gnosis Chain; the Gnosis Chain will become a shard within the larger GBC infrastructure.
 
 Much more information on Gnosis Chain, usage, and applications is available on the [GC (formerly xDai) site](https://www.xdaichain.com).
 
