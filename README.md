@@ -6,9 +6,9 @@ description: Gnosis Beacon Chain Documentation
 
 Gnosis Beacon Chain (GBC) brings vital canary network functionality to the Ethereum 2.0 ecosystem. Applications can iterate through real-world strategies, stage important applications, or choose to run DApps in a faster, lower-stakes environment while enjoying the benefits of massive scalability.
 
-GBC will serve as a final frontrunner prior to important Ethereum 2.0 updates. For example, the merge will first take place on testnets. Updates can then move to a production-level, real-world value environment (GBC)&#x20;
+GBC will serve as a final frontrunner prior to important Ethereum 2.0 updates. For example, the merge will first take place on testnets. Updates can then move to a production-level, real-world value environment (GBC).&#x20;
 
-The GBC merge will occur approximately 1 week prior to Ethereum deployment. This final walkthrough will help uncover any overlooked issues and provide a confidence check prior to Eth2 launch.
+The GBC merge will occur approximately 1 week prior to the Ethereum 2 merge. This final walkthrough will help uncover any overlooked issues and provide a confidence check prior to Eth2 launch.
 
 Validating GBC only requires the equivalent of a single GNO token\*, opening up validation opportunities for diverse groups of individuals across the globe.
 
@@ -18,7 +18,7 @@ _\*1 GNO equivalent. Staking will utilize the mGNO token, where 32 mGNO are equa
 
 ## Gnosis Chain (Formerly xDai)
 
-Gnosis Chain (formerly the xDai Chain) is the supported EVM chain for stable transactions. Gnosis Chain uses the xDai token for transactions and includes a wide-ranging group of projects and users.
+Gnosis Chain (formerly the xDai Chain) is the associated EVM chain for stable transactions. Gnosis Chain uses the xDai token for transactions and includes a wide-ranging group of projects and users.
 
 Much like Ethereum, Gnosis Chain will continue to run in its current form until the merge with the Gnosis Beacon Chain. This is planned for \~ 1 week prior to the Ethereum 2 merge.
 
