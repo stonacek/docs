@@ -19,7 +19,7 @@ The minimum requirement to run a validator is 1 GNO (staked as 32 mGNO tokens). 
 | 1800000    | 100.00%             | 4.00%                 | 72000             | 4.00%                  |
 
 {% hint style="info" %}
-\*[APY Calculator ](https://www.desmos.com/calculator/svnsuuyhf9)for the rewards curve. The Y axis is APR and the X axis is the number of validators multiplied by 100.&#x20;
+\*[APY Calculator](https://www.desmos.com/calculator/7pzueggivw) for the rewards curve. The Y axis is APR and the X axis is the number of validators multiplied by 100.&#x20;
 
 Following parameters set for the calculation.
 
