@@ -13,5 +13,6 @@
   * [Get Started](validator-info/get-started.md)
   * [Validator Deposits](validator-info/validator-deposits.md)
 * [Incentives](incentives.md)
-* [Contracts, Addresses, Parameters](contracts-addresses-parameters.md)
+* [Contracts, Addresses, Parameters](contracts-addresses-parameters/README.md)
+  * [Upgradeability](contracts-addresses-parameters/upgradeability.md)
 * [Security Audit](security-audit.md)
