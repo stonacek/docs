@@ -6,9 +6,9 @@ However, this also introduces issues of administrative responsibility. No one en
 
 A multi-sig Gnosis Safe is used to expand admin responsibilities to a larger entity. The controlling assembly is a Governance Board consisting of known and active projects who have contributed to the Gnosis (formerly xDai) Chain and Ethereum community for some time.&#x20;
 
-:judge:[Governance Board Members](https://www.xdaichain.com/for-users/governance#current-governing-board)
-
 A proposed upgrade is presented to this board and a minimum of 7 signatures are required to enact any proposal.
+
+:judge:[Governance Board Members](https://www.xdaichain.com/for-users/governance#current-governing-board)
 
 ### Contracts managed by the Governance Board
 
