@@ -12,8 +12,6 @@ A proposed upgrade is presented to this board and a minimum of 7 signatures are 
 
 ### Contracts managed by the Governance Board
 
-|                     |                                                                                                                                                    |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Deposit Contract    | [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://blockscout.com/xdai/mainnet/address/0x0B98057eA310F4d31F2a452B414647007d1645d9/read-contract) |
-| mGno Token Contract | [0x722fc4DAABFEaff81b97894fC623f91814a1BF68](https://blockscout.com/xdai/mainnet/address/0x722fc4DAABFEaff81b97894fC623f91814a1BF68/read-contract) |
+* Deposit Contract: [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://blockscout.com/xdai/mainnet/address/0x0B98057eA310F4d31F2a452B414647007d1645d9/read-contract)
+* mGno Token Contract: [0x722fc4DAABFEaff81b97894fC623f91814a1BF68](https://blockscout.com/xdai/mainnet/address/0x722fc4DAABFEaff81b97894fC623f91814a1BF68/read-contract)
 
