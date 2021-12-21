@@ -8,4 +8,7 @@ If you perform a voluntary exit, you **will not be able to withdraw your balance
 Exits are non-reversible; once you have exited you cannot restart your validator.&#x20;
 {% endhint %}
 
-### Instructions Coming Soon
+Voluntary exit procedures vary depending on your client.
+
+* [Lighthouse Voluntary Exit](https://lighthouse-book.sigmaprime.io/voluntary-exit.html)
+* [Prysm Voluntary Exit](https://docs.prylabs.network/docs/wallet/exiting-a-validator/)

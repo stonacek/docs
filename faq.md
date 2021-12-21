@@ -23,7 +23,7 @@ This varies based on how many validators are participating. As the number of val
 
 ### How many validator processes can run per node?
 
-It is possible to run multiple validator processes on a single node with GBC. A 4CPU/8GB node has handled 256 validators during testing processes, although for higher decentralization it is recommended to run multiple nodes, and ideally 1 per validator.
+It is possible to run multiple validator processes on a single node with GBC. A 4CPU/8GB node handled 256 validators during testing processes, although for higher decentralization it is recommended to run multiple nodes, and in an ideal situation 1 per validator.
 
 ## mGNO
 
@@ -35,29 +35,45 @@ mGNO is the staking token used by validators in the Gnosis Beacon Chain.&#x20;
 
 ### How do I get mGNO?
 
-A UI is in process. For now, you can get mGNO by [interacting with the contract on BlockScout](validator-info/validator-deposits.md#1-convert-gno-to-mgno). You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
+A UI is in process. Future functionality will also make the swap more seamless, so that validators will only need to provide GNO and the swap from GNO to mGNO will happen behind the scenes.
+
+For now, you can get mGNO by [interacting with the contract on BlockScout](validator-info/validator-deposits.md#1-convert-gno-to-mgno). You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
 
 ### How much mGNO do I need to stake to become a validator?
 
 32 mGNO are staked for each validator. This is the equivalent of 1 GNO. 32 is used to remain consistent with the Ethereum Beacon Chain, where 32 ETH are required to run a validator.
 
+### Can I swap mGNO back to GNO
+
+No, not currently. Once withdrawals are activated, users will be prompted to swap during the withdrawal process.
+
 ## Nodes & Clients&#x20;
 
 ### Which clients are supported by GBC?
 
-Modified versions of Lighthouse and Prysm.  DAppNode will initially support the Prysm implementation only.
+Modified versions of [Lighthouse](clients/lighthouse.md) and [Prysm](clients/prysm.md).  DAppNode will initially support the Prysm implementation only.
 
 ### How long does it take to sync the Gnosis Chain?
 
-Prior to running the GBC client you may also consider running a Gnosis Chain Node to connect to.
+Along with running the GBC client you should also consider running a Gnosis Chain Node to connect to (not required but recommended).
 
 Syncing the [Gnosis Chain using Nethermind or OpenEthereum](clients/gnosis-chain-node-openethereum-and-nethermind/) requires \~40GB (and growing) of data to download. You may encounter some errors during synching. Depending on your setup, you can expect it to take anywhere from a few hours to up to a day.
+
+### Can I use a node provider to run a Gnosis Chain node?
+
+Yes you can. Providers who currently support Gnosis Chain:
+
+* **QuikNode**  [https://blog.quiknode.io/xdai-network-is-live-on-quiknode/](https://blog.quicknode.com/xdai-network-is-live-on-quiknode/)****
+* **Ankr** [https://www.ankr.com/](https://www.ankr.com)****
+* **GetBlock.io** [https://getblock.io/nodes/stake](https://getblock.io/nodes/stake)****
+* **AnyBlock Analytics** [https://www.anyblockanalytics.com/json-rpc](https://www.anyblockanalytics.com/json-rpc/)****
+* **Pocket** [https://www.portal.pokt.network](https://www.portal.pokt.network/#1)
 
 ## Withdrawals
 
 ### When will withdrawals be active?
 
-Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is currently scheduled to occur \~1 week prior to the ETH2 merge.
+Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is currently scheduled to occur \~1 week prior to the ETH2 merge (Scheduled for June, 2022).
 
 ### **What are withdrawal credentials?**
 
@@ -66,7 +82,7 @@ Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is curren
 1. Eth1 address withdrawal: If you want to withdraw to Eth1 chain after the merge, set `--eth1_withdrawal_address <YOUR ETH1 ADDRESS>` when running the deposit script. **Make sure you control this Eth1 address, as you will use it to initiate a withdrawal.**
 2. BLS withdrawal: If Eth1 withdrawal address is not specified, the, deposit script generates withdrawal credentials with the withdrawal key derived via mnemonics in [EIP2334](https://eips.ethereum.org/EIPS/eip-2334)  (Eth2 address format) format. You will use this mnemonic during the withdrawal process, so be sure to keep it secure.
 
-### Can I withdraw rewards I have earned (without withdrawing my whole 32mGNO stake)?
+### Can I withdraw rewards I have earned (without withdrawing my entire 32mGNO stake)?
 
 Current plans do not include partial withdrawals of rewards only. You will be able to withdraw your full validator balance with all accumulated rewards once withdrawals are implemented.
 
@@ -76,11 +92,11 @@ Withdrawals are currently not available, even if you've accidentally sent extra 
 
 ### What types of addresses can be used for withdrawals? EOA, contact, Gnosis Safe, proxy, stub?
 
-Yes! It should be safe to use any type of supported withdrawal credentials,  either an ETH1 address (i.e. Gnosis Chain address) or a BLS credentials.
+Yes! It should be safe to use any type of supported withdrawal credentials,  either an ETH1 address (i.e. Gnosis Chain address) or a BLS credential.
 
-For BLS withdrawal credentials, make sure to keep a mnemonic phrase you have used for its generation. Once withdrawals are enabled, you will need to use it to sign a withdrawal request message.&#x20;
+For BLS withdrawal credentials, make sure to keep the mnemonic phrase from the key generation process. Once withdrawals are enabled, you will need to use it to sign a withdrawal request message.&#x20;
 
-For ETH1 withdrawal credentials, make sure you have a full control over the specified address and you can execute transactions from behalf of this address. Three common options for ETH1 withdrawal credentials:
+For ETH1 withdrawal credentials, make sure you have  full control over the specified address and can execute transactions on behalf of this address. Three common options for ETH1 withdrawal credentials:
 
 * **EOA address**. Make sure to keep its private key / mnemonic in a secure place, so that you will have access to it once withdrawals are enabled.
 * **Gnosis Safe multisig**. Make sure you can execute calls on behalf of the safe address once withdrawals are enabled.
