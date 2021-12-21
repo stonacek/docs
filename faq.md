@@ -77,10 +77,10 @@ Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is curren
 
 ### **What are withdrawal credentials?**
 
-[Withdrawal Credentials](https://github.com/ethereum/eth2.0-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) are specified during the key generation process. Currently, there are two types of withdrawals: BLS withdrawal and Eth1 address withdrawal.
+[Withdrawal Credentials](https://github.com/ethereum/eth2.0-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) are specified during the key generation process. Currently, there are two types of withdrawals: BLS withdrawal and Eth1 address withdrawal. An Eth1 address is an 0x address you use on current EVM chains such as Gnosis Chain, Ethereum, BSC etc.
 
-1. Eth1 address withdrawal: If you want to withdraw to Eth1 chain after the merge, set `--eth1_withdrawal_address <YOUR ETH1 ADDRESS>` when running the deposit script. **Make sure you control this Eth1 address, as you will use it to initiate a withdrawal.**
-2. BLS withdrawal: If Eth1 withdrawal address is not specified, the, deposit script generates withdrawal credentials with the withdrawal key derived via mnemonics in [EIP2334](https://eips.ethereum.org/EIPS/eip-2334)  (Eth2 address format) format. You will use this mnemonic during the withdrawal process, so be sure to keep it secure.
+1. Eth1 address withdrawal: If you want to withdraw to an EVM chain after the merge, set `--eth1_withdrawal_address <YOUR 0x ADDRESS>` when running the deposit script. **Make sure you control this Eth1 EVM address, as you will use it to initiate a withdrawal.**
+2. BLS withdrawal: If an Eth1 withdrawal address is not specified, the, deposit script generates withdrawal credentials with the withdrawal key derived via mnemonics in [EIP2334](https://eips.ethereum.org/EIPS/eip-2334)  (Eth2 address format) format. You will use this mnemonic during the withdrawal process, so be sure to keep it secure.
 
 ### Can I withdraw rewards I have earned (without withdrawing my entire 32mGNO stake)?
 
