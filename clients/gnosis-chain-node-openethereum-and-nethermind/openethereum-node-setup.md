@@ -51,7 +51,7 @@ For Linux systems:
       $ yum group install "Development Tools"
     ```
 
-## Once OpenEthereum is Installed, Connect and Sync with xDai
+## Once OpenEthereum is Installed, Connect and Sync with GC (xDai)
 
 ```
 openethereum --chain xdai --no-warp

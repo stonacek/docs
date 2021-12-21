@@ -22,7 +22,7 @@ You can select either OpenEthereum or Nethermind as your client of choice. Follo
 ## 2) Generate Validator Account(s) and Deposit Data
 
 {% hint style="warning" %}
-It is highly recommended to generate keystores on a safe, completely offline device.
+It is recommended that you generate keystores on a safe, completely offline device. To do so, you will need to connect online to pull the docker image (step 1), then disconnect to proceed with key generation (step 2), then finally save your deposit\_data.json file (step 3) to a usb key or other transfer method that does not require online connection.&#x20;
 
 Securely backup your mnemonic, keystores, and password and keep in a safe place.
 {% endhint %}
@@ -60,7 +60,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
 
     More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
 
-    After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.
+    3\.  After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
 
 ## 3) Import Validator Keys
 

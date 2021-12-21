@@ -1,7 +1,7 @@
 # Nethermind Node Setup
 
 {% hint style="warning" %}
-A majority of xDai validators are now running the Nethermind client. The latest version 1.11.7 includes support for the London HF on xDai.\
+A majority of Gnosis Chain validators are now running the Nethermind client. The latest version 1.11.7 includes support for the London HF.\
 \
 Version [https://github.com/NethermindEth/nethermind/releases/tag/1.11.7](https://github.com/NethermindEth/nethermind/releases/tag/1.11.7)\
 Ethstats: [https://dai-netstat.poa.network/](https://dai-netstat.poa.network)
@@ -23,7 +23,7 @@ Nethermind Launcher is a self-contained app - you do not need to install .NET se
 * [Understanding logs](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#explaining-nethermind-logs)
 
 {% hint style="info" %}
-When you start the Launcher choose the following options to sync a node:
+When you start the Launcher choose the following options to sync a node (Still uses xDai name):
 
 * Start Nethermind: **Node**
 * Select network: **xDai**&#x20;
