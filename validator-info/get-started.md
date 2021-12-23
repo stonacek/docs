@@ -42,10 +42,9 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
       --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
     ```
 
-    N_ote: `/path/to/` should be replaced with a valid path where you want to create the validator\_keys folder. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)_\
+    N_ote: `/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)._ \
     \
-    \
-    otherwise you can prompt the mnemonic during execution:&#x20;
+    If you have run the process before, you can prompt the mnemonic during execution:&#x20;
 
     ```
     docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
@@ -60,7 +59,9 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
 
     More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
 
-    3\.  After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
+    3\.  After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file. \
+    \
+    _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located where you set `path/to/`_
 
 ## 3) Import Validator Keys
 
