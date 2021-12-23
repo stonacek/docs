@@ -56,8 +56,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
     * `NUM` The number of signing keys (validators) to generate.
     * `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
     * `WITHDRAWAL_ADDRESS`  Use this parameter to provide an xDai `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
-
-    More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
+    * More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
 
     3\.  After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file. \
     \
@@ -114,7 +113,7 @@ The Lighthouse client has been modified to account for consensus parameters spec
 
 ## 4) Run the Beacon Chain node with the attached Validator Process&#x20;
 
-On the same machine as in _the Step 3_ run the following commands (works for both Lighthouse and Prysm):
+On the same machine as _Step 3_ run the following commands (works for both Lighthouse and Prysm):
 
 ```
 docker-compose up -d node
