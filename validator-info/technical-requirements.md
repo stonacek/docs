@@ -15,12 +15,10 @@ Note that synching Gnosis Chain (formerly xDai) may take up to 12 hours dependin
 
 ### Security
 
-When setting up hardware or a VM, use proper security measures including securing the root account, setting up a firewall, and forwarding necessary ports to the correct machines from the router based on the client you choose for running Gnosis Chain (formerly xDai) and the beacon chain.
+When setting up hardware or a VM, use proper security measures including securing the root account, setting up a firewall, and forwarding necessary ports to the correct machines from the router.
 
-* OpenEthereum: 30303 TCP/UDP
-* Nethermind: 30303 TCP/UDP
-* Lighthouse: 9000 TCP/UDP
-* Prysm: 12000 UDP, 13000 TCP
+* OpenEthereum & Nethermind: 30303 TCP/UDP
+* Prysm & Lighthouse: 12000 UDP, 13000 TCP
 
 ### Time Sync
 

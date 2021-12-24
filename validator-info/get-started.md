@@ -67,7 +67,9 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
 {% hint style="info" %}
 To begin, determine which client you want to run, Lighthouse or Prysm. Instructions differ for the 2 clients.
 
-Make sure your machine conforms to the [Technical Requirements](technical-requirements.md#beacon-chain-node-requirements) for running a node.
+Make sure your machine conforms to the [Technical Requirements](technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
+
+* 12000 UDP, 13000 TC
 {% endhint %}
 
 ### Prysm
