@@ -12,6 +12,10 @@ If you are interested in running a node in the future, please [fill out this for
 Instructions are in process. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
 {% endhint %}
 
+{% hint style="info" %}
+DappNode supports the Gnosis Beacon Chain! If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+{% endhint %}
+
 ## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
 
 You can select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:

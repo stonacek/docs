@@ -10,3 +10,7 @@ Both client instances are modified slightly to support GBC and the original bina
 | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 In addition to the GBC client, validators will also need to [operate or connect to an operational Gnosis Chain (native xDai) nod](gnosis-chain-node-openethereum-and-nethermind/)e running Nethermind or OpenEthereum.&#x20;
+
+{% hint style="info" %}
+DappNode supports the Gnosis Beacon Chain! If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+{% endhint %}

@@ -69,6 +69,10 @@ Yes you can. Providers who currently support Gnosis Chain:
 * **AnyBlock Analytics** [https://www.anyblockanalytics.com/json-rpc](https://www.anyblockanalytics.com/json-rpc/)****
 * **Pocket** [https://www.portal.pokt.network](https://www.portal.pokt.network/#1)
 
+## Can I use DappNode?
+
+Yes! DappNode is a partner and full-featured service provider for the Gnosis Beacon Chain. If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+
 ## Withdrawals
 
 ### When will withdrawals be active?
