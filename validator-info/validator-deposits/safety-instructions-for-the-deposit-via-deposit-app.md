@@ -1,6 +1,6 @@
 # Safety Instructions for the Deposit via Deposit App
 
-#### Make sure you aren't’ being phished
+#### Make sure you aren't being phished
 
 You are responsible for the transaction. Fraudulent websites might try to lure you into sending funds to them, instead of the official deposit contract. Make sure that you are sending the transaction with correct data.
 
