@@ -132,6 +132,6 @@ A similar command can be used to look at the validator process logs: `docker-com
 
 ## 5) Make a Deposit
 
-Making deposits is a 2 part process. See the [Validator Deposits section](validator-deposits.md) for details.
+Making deposits is a 2 part process. See the [Validator Deposits section](validator-deposits/) for details.
 
 ##

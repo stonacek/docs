@@ -37,7 +37,7 @@ mGNO is the staking token used by validators in the Gnosis Beacon Chain.&#x20;
 
 A UI is in process. Future functionality will also make the swap more seamless, so that validators will only need to provide GNO and the swap from GNO to mGNO will happen behind the scenes.
 
-For now, you can get mGNO by [interacting with the contract on BlockScout](validator-info/validator-deposits.md#1-convert-gno-to-mgno). You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
+For now, you can get mGNO by [interacting with the contract on BlockScout](validator-info/validator-deposits/#1-convert-gno-to-mgno). You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
 
 ### How much mGNO do I need to stake to become a validator?
 
