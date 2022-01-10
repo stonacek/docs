@@ -4,7 +4,7 @@ description: Gnosis Beacon Chain Documentation
 
 # GBC Introduction
 
-Gnosis Beacon Chain (GBC) brings extendable, beacon network functionality to the Ethereum 2.0 ecosystem. Applications can iterate through real-world strategies, stage important applications, or choose to run DApps in a faster, lower-stakes environment while enjoying the benefits of massive scalability.
+Gnosis Beacon Chain (GBC) brings extendable, beacon-network functionality to the Ethereum 2.0 ecosystem. Applications can iterate through real-world strategies, stage important applications, or choose to run DApps in a faster, lower-stakes environment while enjoying the benefits of massive scalability.
 
 GBC will serve as a final frontrunner prior to important Ethereum 2.0 updates. For example, the merge will first take place on testnets. Updates can then move to a production-level, real-world value environment (Gnosis Beacon Chain).&#x20;
 
