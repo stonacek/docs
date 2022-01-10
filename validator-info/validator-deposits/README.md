@@ -68,7 +68,7 @@ If you don't see the new amount of mGNO, refresh the application.
 {% hint style="info" %}
 Following a successful deposit, the Gnosis Beacon Chain will wait for 1024 Gnosis Chain blocks plus up to 64 Gnosis Beacon Chain epochs before adding validators to the pool. **This means it will take approximately 1.5 hours before the validators start proposing and attesting blocks on the Gnosis Chain.**
 
-Once live, you can view your validator(s) here: [https://beacon.gnosischain.com/](https://beacon.gnosischain.com)
+Once live, you can view your validator(s) on the explorer. Copy the pubkey(s) from your deposit\_data.json file (a key will be generated for each validator) and paste into the search box at [https://beacon.gnosischain.com/](https://beacon.gnosischain.com).
 {% endhint %}
 
 \
