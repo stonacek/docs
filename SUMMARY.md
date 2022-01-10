@@ -20,3 +20,4 @@
 * [Contracts, Addresses, Parameters](contracts-addresses-parameters/README.md)
   * [Upgradeability](contracts-addresses-parameters/upgradeability.md)
 * [Security Audit](security-audit.md)
+* [Media Kit](media-kit.md)
