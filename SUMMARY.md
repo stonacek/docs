@@ -13,6 +13,8 @@
   * [Get Started](validator-info/get-started.md)
   * [Validator Deposits](validator-info/validator-deposits/README.md)
     * [Safety Instructions for the Deposit via Deposit App](validator-info/validator-deposits/safety-instructions-for-the-deposit-via-deposit-app.md)
+    * [Manual Method](validator-info/validator-deposits/manual-method.md)
+    * [Node Monitoring](validator-info/validator-deposits/node-monitoring.md)
   * [Validator Withdrawals](validator-info/validator-withdrawals/README.md)
     * [Voluntary Exit](validator-info/validator-withdrawals/voluntary-exit.md)
 * [FAQ](faq.md)

@@ -18,15 +18,33 @@ DappNode supports the Gnosis Beacon Chain! If you would like to use their servic
 
 ## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
 
-You can select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:
+{% hint style="info" %}
+This process is optional but recommended.
+{% endhint %}
+
+While not mandatory to run a validator (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization.&#x20;
+
+Select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:
 
 * [Nethermind](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
 * [OpenEthereum](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
+Third party node providers are also an option for setting up and running a Gnosis (xDai) Chain Node.
+
+* **QuikNode** [https://blog.quiknode.io/xdai-network-is-live-on-quiknode/](https://blog.quicknode.com/xdai-network-is-live-on-quiknode/)****
+* **Ankr** [https://www.ankr.com/](https://www.ankr.com)****
+* **GetBlock.io** [https://getblock.io/nodes/stake](https://getblock.io/nodes/stake)****
+* **AnyBlock Analytics** [https://www.anyblockanalytics.com/json-rpc](https://www.anyblockanalytics.com/json-rpc/)****
+* **Pocket** [https://www.portal.pokt.network](https://www.portal.pokt.network/#1).&#x20;
+
 ## 2) Generate Validator Account(s) and Deposit Data
 
 {% hint style="warning" %}
-It is recommended that you generate keystores on a safe, completely offline device. To do so, you will need to connect online to pull the docker image (step 1), then disconnect to proceed with key generation (step 2), then finally save your deposit\_data.json file (step 3) to a usb key or other transfer method that does not require online connection.&#x20;
+The following processes use [Docker](https://www.docker.com) to generate keystores and spin up clients. Please check that you are running a recent version. For key generation, binaries are also available.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+We highly recommend generating keystores on a safe, completely offline device. To do so, you will need to connect online to pull the docker image (step 1), then disconnect to proceed with key generation (step 2), then finally save your deposit\_data.json file (step 3) to a usb key or other transfer method that does not require online connection.&#x20;
 
 Securely backup your mnemonic, keystores, and password and keep in a safe place.
 {% endhint %}
@@ -36,49 +54,53 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
     ```
     docker pull ghcr.io/gnosischain/validator-data-generator:latest
     ```
-2.  If this is your first time running the process and there is no an existing mnemonic to generate keystores and deposit data, use the following command:\
-    __
+2. If this is your first time running the process and there is no an existing mnemonic to generate keystores and deposit data, replace the variables below with your info and run the command.\
+   __
+   1. `NUM` The number of signing keys (validators) to generate.
+   2. `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
+   3. `WITHDRAWAL_ADDRESS`  Use this parameter to provide a regular Gnosis Chain `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
+   4. _`/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. Or, to create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`_
+   5. More details about command line arguments can be found[ here.](https://github.com/gnosischain/validator-data-generator/)
 
-    ```
-    docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
-      ghcr.io/gnosischain/validator-data-generator:latest new-mnemonic \
-      --num_validators=NUM --mnemonic_language=english --chain=gnosis \
-      --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
-    ```
+```
+docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
+  ghcr.io/gnosischain/validator-data-generator:latest new-mnemonic \
+  --num_validators=NUM --mnemonic_language=english --chain=gnosis \
+  --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
+```
 
-    N_ote: `/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. To create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`)._ \
-    \
-    If you have run the process before, you can prompt the mnemonic during execution:&#x20;
+3\. If you have run the process before, you can prompt the mnemonic during execution:&#x20;
 
-    ```
-    docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
-      ghcr.io/gnosischain/validator-data-generator:latest existing-mnemonic \
-      --validator_start_index=START_NUM --num_validators=NUM --chain=gnosis \
-      --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
-    ```
+```
+docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
+  ghcr.io/gnosischain/validator-data-generator:latest existing-mnemonic \
+  --validator_start_index=START_NUM --num_validators=NUM --chain=gnosis \
+  --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
+```
 
-    * `NUM` The number of signing keys (validators) to generate.
-    * `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
-    * `WITHDRAWAL_ADDRESS`  Use this parameter to provide an xDai `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
-    * More details about command line arguments can be found [here](https://github.com/gnosischain/validator-data-generator/tree/gbc#commands).
+4\.  Choose a secure password and confirm. You will see a mnemonic seed phrase. Write down and store your pwd and mnemonic safely offline.
 
-    3\.  After the command execution `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file. \
-    \
-    _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located where you set `path/to/`_
+![](../.gitbook/assets/mnemonic.png)
 
-## 3) Import Validator Keys
+Following execution, the path you defined for `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
+
+{% hint style="info" %}
+Note: _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located where you set `path/to/`_
+{% endhint %}
+
+## 3) Choose Your Beacon Chain Client & Import Validator Keys
 
 {% hint style="info" %}
 To begin, determine which client you want to run, Lighthouse or Prysm. Instructions differ for the 2 clients.
 
 Make sure your machine conforms to the [Technical Requirements](technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
 
-* 12000 UDP, 13000 TC
+* **12000 UDP, 13000 TC**
 {% endhint %}
 
 ### Prysm
 
-The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however the original Prysm binary will not work as expected for the Gnosis Chain implementation.
+The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however, the original Prysm binary will not work as expected for the Gnosis Chain implementation.
 
 1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
 2.  Clone the repo that includes the required configs.
