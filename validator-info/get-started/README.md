@@ -139,8 +139,8 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 5. Write the keystore password to the `keys/keystore_password.txt` file.
 6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as wallet\_password.txt. This password will be used by Prysm to access the private keys of validators following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
 7. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
-   1. Use the `curl ifconfig.me ; echo ''` command within the VM to get the IP of your node.
-   2. If you are running a GC node on the same machine as your Prysm setup, you will need to include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545. [More Details](gc-and-gbc-running-on-the-same-machine.md).
+   1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
+   2. If you are running a GC node on the same machine as your Prysm setup, you can include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545 to access. [More Details](gc-and-gbc-running-on-the-same-machine.md).
    3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
    4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
 8.  Run the following command to import all added keystore files:
