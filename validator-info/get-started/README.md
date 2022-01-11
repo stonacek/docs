@@ -4,17 +4,34 @@
 If you are interested in running a node in the future, please [fill out this form](https://airtable.com/shrrzJsRLa767gpcQ) and we will contact you to start the setup.
 {% endhint %}
 
-## Chain Currently in Alpha Deployment Phase
-
-### -Instructions in Development -&#x20;
+## Chain Currently in Beta Deployment
 
 {% hint style="warning" %}
-Instructions are in process. If you are not currently working with the team to run a validator, please fill out the form above and we will contact you with more information.
+Instructions are in process. If you are not currently working with the team to run a validator, fill out the form above and we will contact you with more information.
 {% endhint %}
 
 {% hint style="info" %}
 DappNode supports the Gnosis Beacon Chain! If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
 {% endhint %}
+
+## Setup Summary
+
+Before you begin the setup, please check the [Validator Requirements and Responsibilities](../validator-requirements-and-responsibilities.md) and [Technical Requirements](../technical-requirements.md) for your node.
+
+When you are ready, you will perform the following steps to get things up and running.
+
+1. [Setup and run a Gnosis Chain Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This is optional but recommended for maximum decentralization. You can also connect to a public RPC or 3rd party Gnosis Chain endpoint.
+2. [Generate Validator Keystores and Deposit Data](./#2-generate-validator-account-s-and-deposit-data): On an offline machine, generate up to 128 separate validator keys per node.
+3. [Choose your Client](./#3-choose-your-beacon-chain-client-and-import-validator-keys): Choose to run either Prysm or Lighthouse. Add keystores and env variables.
+4. [Start up your Beacon Chain Node](./#4-run-the-beacon-chain-node-with-the-attached-validator-process): Run in the docker container.
+5. [Deposit to your Validator(s)](../validator-deposits/): Use the Deposit UI to convert GNO to mGNO (metaGNO for staking) and deposit to your validator.
+6. [View on Explorer](../validator-deposits/#view-your-validator): Wait \~1.5-2 hours for your validator(s) to go live and view at [https://beacon.gnosischain.com](https://beacon.gnosischain.com).
+
+### **Requirements:**
+
+* Recent [Docker](https://www.docker.com) version (Docker v20.10+)
+* Terminal access on your node and CLI familiarity
+* [MetaMask](https://metamask.io) (or equivalent) connected to the Gnosis Chain with 1 GNO per validator and a small amount of xDai for transaction costs.
 
 ## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
 
@@ -22,12 +39,21 @@ DappNode supports the Gnosis Beacon Chain! If you would like to use their servic
 This process is optional but recommended.
 {% endhint %}
 
-While not mandatory to run a validator (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization.&#x20;
+While not mandatory to run a validator (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization. You can run the GC client on the same machine you will run the Gnosis Beacon Chain client or select a different setup.
 
 Select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:
 
-* [Nethermind](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
-* [OpenEthereum](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
+* [Nethermind](../../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
+* [OpenEthereum](../../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
+
+Once your node is setup, you will need an RPC endpoint to set the env variable. More details in step 3.
+
+Client RPC endpoint info:
+
+* [Nethermind RPC](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc)
+* [OpenEthereum RPC](https://github.com/openethereum/parity-ethereum#2-technical-overview-)
+
+### 3rd Party Providers
 
 Third party node providers are also an option for setting up and running a Gnosis (xDai) Chain Node.
 
@@ -54,7 +80,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
     ```
     docker pull ghcr.io/gnosischain/validator-data-generator:latest
     ```
-2. If this is your first time running the process and there is no an existing mnemonic to generate keystores and deposit data, replace the variables below with your info and run the command.\
+2. If this is your first time running the process and there is no an existing mnemonic to generate keystores and deposit data, replace the variables below with your info then run the command.\
    __
    1. `NUM` The number of signing keys (validators) to generate.
    2. `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
@@ -80,7 +106,7 @@ docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
 
 4\.  Choose a secure password and confirm. You will see a mnemonic seed phrase. Write down and store your pwd and mnemonic safely offline.
 
-![](../.gitbook/assets/mnemonic.png)
+![](../../.gitbook/assets/mnemonic.png)
 
 Following execution, the path you defined for `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
 
@@ -93,7 +119,7 @@ Note: _The output will be "Success! Your keys can be found at: /app/validator\_k
 {% hint style="info" %}
 To begin, determine which client you want to run, Lighthouse or Prysm. Instructions differ for the 2 clients.
 
-Make sure your machine conforms to the [Technical Requirements](technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
+Make sure your machine conforms to the [Technical Requirements](../technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
 
 * **12000 UDP, 13000 TC**
 {% endhint %}
@@ -112,7 +138,11 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 4. Copy validators’ keystore files generated in _Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
 5. Write the keystore password to the `keys/keystore_password.txt` file.
 6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as wallet\_password.txt. This password will be used by Prysm to access the private keys of validators following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
-7. Create an `.env` file from the example at `.env.example`. Fill in the valid external IP address of your node and xDAI RPC url in the config. Other values can remain unchanged.
+7. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
+   1. Use the `curl ifconfig.me ; echo ''` command within the VM to get the IP of your node.
+   2. If you are running a GC node on the same machine as your Prysm setup, you will need to include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545. [More Details](gc-and-gbc-running-on-the-same-machine.md).
+   3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
+   4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
 8.  Run the following command to import all added keystore files:
 
     ```
@@ -132,7 +162,13 @@ The Lighthouse client has been modified to account for consensus parameters spec
 3. Switch to the cloned directory: `cd gbc`.
 4. Copy validators’ keystore files generated on _the Step 2_ to the `keys/validator_keys` directory. Ensure that copied keystores are only used on a single node.
 5. Write the keystore password to the `keys/keystore_password.txt` file.
-6. Create `.env` file from the example at `.env.example`. Put the valid external IP address of your node and xDAI RPC url in the config. Other values can be left without changes.
+6. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
+   1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
+   2. If you are running a GC node on the same machine as your Lighthouse setup, you will need to include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545. [More Details](gc-and-gbc-running-on-the-same-machine.md).
+   3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
+   4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
+   5. To set fallback IP(s), use comma-separated RPC urls for the XDAI\_RPC\_URL variable. This is useful if your node goes offline. For example:
+      1. &#x20;`XDAI_RPC`\_URL=https://\<your-endpoint>, [https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
 7.  Run the following command to import and all added keystore files:
 
     ```
@@ -154,6 +190,6 @@ A similar command can be used to look at the validator process logs: `docker-com
 
 ## 5) Make a Deposit
 
-Making deposits is a 2 part process. See the [Validator Deposits section](validator-deposits/) for details.
+Making deposits is a 2 part process. See the [Validator Deposits section](../validator-deposits/) for details.
 
 ##

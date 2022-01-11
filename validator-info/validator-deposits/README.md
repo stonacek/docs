@@ -7,7 +7,7 @@ Deposits occur on the Gnosis Chain (formerly xDai Chain). **If you have GNO on E
 * Add Gnosis Chain Network to your wallet with [https://chainlist.org/](https://chainlist.org) or [using these manual instructions](https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup).
 {% endhint %}
 
-Once you have followed the steps to [Get Started](../get-started.md) and your Beacon Chain node is running, you will make a deposit of **32 mGNO for each validator**. You can make a bulk deposit for up to 128 validators at a time.
+Once you have followed the steps to [Get Started](../get-started/) and your Beacon Chain node is running, you will make a deposit of **32 mGNO for each validator**. You can make a bulk deposit for up to 128 validators at a time.
 
 Making a deposit requires 2 steps. First, GNO must be converted to mGNO. For every 1 GNO, you will receive 32 mGNO.&#x20;
 
@@ -45,7 +45,7 @@ The second processes the transaction. This will require a small amount of xDai t
 If you don't see the new amount of mGNO, refresh the application.
 {% endhint %}
 
-1\) Switch to the Deposit tab. Upload your `deposit_data.json` file from step 2 in the [Get Started section](../get-started.md#2-generate-validator-account-s-and-deposit-data). It will be located in the same folder as the generated keystores.
+1\) Switch to the Deposit tab. Upload your `deposit_data.json` file from step 2 in the [Get Started section](../get-started/#2-generate-validator-account-s-and-deposit-data). It will be located in the same folder as the generated keystores.
 
 ![](../../.gitbook/assets/dep-1.png)
 
@@ -64,6 +64,8 @@ If you don't see the new amount of mGNO, refresh the application.
 ![](../../.gitbook/assets/convert-save.png)
 
 ![](../../.gitbook/assets/dep-made.png)
+
+## View your Validator
 
 {% hint style="info" %}
 Following a successful deposit, the Gnosis Beacon Chain will wait for 1024 Gnosis Chain blocks plus up to 64 Gnosis Beacon Chain epochs before adding validators to the pool. **This means it will take approximately 1.5 hours before the validators start proposing and attesting blocks on the Gnosis Chain.**

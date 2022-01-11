@@ -48,7 +48,7 @@ A modification to the Gnosis Chain deposit contract allows you to deposit in bat
 
     `STAKING_ACCOUNT_PRIVATE_KEY` is the private key of the account which holds the necessary amount of mGNO tokens for deposit. Any account may be used for funding, but it must also have a small amount of xDai to process transactions. In the above example, 2 transactions will occur with 256 total deposits of 32 mGNO each. \
 
-3. Copy the `deposit_data.json` generated during [Step 2 of Get Started ](../get-started.md#2-generate-validator-account-s-and-deposit-data)to the current directory.
+3. Copy the `deposit_data.json` generated during [Step 2 of Get Started ](../get-started/#2-generate-validator-account-s-and-deposit-data)to the current directory.
 4.  Run the deposit script (`/path/to/` should be a valid path to the .env file you have created):
 
     ```
