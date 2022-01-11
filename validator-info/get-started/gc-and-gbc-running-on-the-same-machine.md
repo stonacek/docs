@@ -42,3 +42,9 @@ services:
 
 You can then set the `XDAI_RPC_URL=`http://host.docker.internal:8545 in your .env file.
 
+{% hint style="info" %}
+If you are running a Nethermind client, you will need to [turn on JSON RPC in the config file](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc).
+
+If running the OE client, HTTP listens on port `8545`
+{% endhint %}
+
