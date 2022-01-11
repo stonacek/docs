@@ -39,16 +39,16 @@ When you are ready, you will perform the following steps to get things up and ru
 This process is optional but recommended.
 {% endhint %}
 
-While not mandatory (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization. You can run the GC client on the same machine you will run the Gnosis Beacon Chain client or choose a different setup.
+While not mandatory (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization. You can run the GC client on the same machine where you run the Gnosis Beacon Chain client or choose a different setup.
 
 Select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:
 
 * [Nethermind](../../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
 * [OpenEthereum](../../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
-Once your node is setup, take note of the RPC address.
+Once your node is setup, take note of the RPC endpoint -  you will need it later in the setup. This is typically `http://x.x.x.x:8545` where `x.x.x.x` is your instance ip.
 
-Client RPC endpoint info:
+Additional client RPC endpoint info:
 
 * [Nethermind RPC](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc) (JSON RPC needs to be explicitly switched on in the Nethermind `config` file)&#x20;
 * [OpenEthereum RPC](https://openethereum.github.io/JSONRPC) (HTTP: Listens on port `8545`)
