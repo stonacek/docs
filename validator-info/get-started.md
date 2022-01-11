@@ -31,7 +31,7 @@ Select either OpenEthereum or Nethermind as your client of choice. Follow these 
 
 Third party node providers are also an option for setting up and running a Gnosis (xDai) Chain Node.
 
-* **QuikNode** [https://blog.quiknode.io/xdai-network-is-live-on-quiknode/](https://blog.quicknode.com/xdai-network-is-live-on-quiknode/)****
+* **QuickNode** [https://blog.quiknode.io/xdai-network-is-live-on-quiknode/](https://blog.quicknode.com/xdai-network-is-live-on-quiknode/)****
 * **Ankr** [https://www.ankr.com/](https://www.ankr.com)****
 * **GetBlock.io** [https://getblock.io/nodes/stake](https://getblock.io/nodes/stake)****
 * **AnyBlock Analytics** [https://www.anyblockanalytics.com/json-rpc](https://www.anyblockanalytics.com/json-rpc/)****
