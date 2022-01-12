@@ -110,8 +110,12 @@ docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
 
 Following execution, the path you defined for `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
 
+{% hint style="warning" %}
+Note: The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located wherever you set `path/to/`
+{% endhint %}
+
 {% hint style="info" %}
-Note: _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located wherever you set `path/to/`_
+_`Want to learn more about Ethereum 2.0 keys and key generation?`_ 💡[Learn more](./#chain-currently-in-beta-deployment)
 {% endhint %}
 
 ## 3) Choose Your Beacon Chain Client & Import Validator Keys
