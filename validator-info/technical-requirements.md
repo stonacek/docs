@@ -67,7 +67,7 @@ To process validator deposits it is recommended to run your own Gnosis node. It 
 * OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
 * CPU: 2 cores
 * RAM: 4GB
-* Disk: 50gb SSD
+* Disk: 100gb SSD
 * Git installed `git --version`
 
 [-> Nethermind Node Setup](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
