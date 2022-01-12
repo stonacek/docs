@@ -7,7 +7,7 @@ While it is possible to link GBC to an existing node using a JSON RPC endpoint, 
 * OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
 * CPU: 2 cores
 * RAM: 4GB
-* Disk: 50gb SSD
+* Disk: 100gb SSD
 * Git installed `git --version`
 
 The following instructions are for the xDai chain setup. Instructions will be updated at some point to reflect the naming change, for now instructions are followed as is.
