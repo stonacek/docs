@@ -20,33 +20,33 @@ Before you begin the setup, please check the [Validator Requirements and Respons
 
 When you are ready, you will perform the following steps to get things up and running.
 
-1. [Setup and run a Gnosis Chain Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This is optional but recommended for maximum decentralization. You can also connect to a public RPC or 3rd party Gnosis Chain endpoint.
+1. [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): It is optional but recommended for maximum decentralization to run an L1 node. You can also connect to a public RPC or 3rd party Gnosis Chain endpoint.
 2. [Generate Validator Keystores and Deposit Data](./#2-generate-validator-account-s-and-deposit-data): On an offline machine, generate up to 128 separate validator keys per node.
-3. [Choose your Client](./#3-choose-your-beacon-chain-client-and-import-validator-keys): Choose to run either Prysm or Lighthouse. Add keystores and env variables.
-4. [Start up your Beacon Chain Node](./#4-run-the-beacon-chain-node-with-the-attached-validator-process): Run in the docker container.
+3. [Choose your Gnosis Beacon Chain (GBC) Client](./#3-choose-your-beacon-chain-client-and-import-validator-keys): Choose to run either Prysm or Lighthouse. Add keystores and env variables.
+4. [Start up your GBC Node](./#4-run-the-beacon-chain-node-with-the-attached-validator-process): Run in the docker container.
 5. [Deposit to your Validator(s)](../validator-deposits/): Use the Deposit UI to convert GNO to mGNO (metaGNO for staking) and deposit to your validator.
 6. [View on Explorer](../validator-deposits/#view-your-validator): Wait \~1.5-2 hours for your validator(s) to go live and view at [https://beacon.gnosischain.com](https://beacon.gnosischain.com).
 
 ### **Requirements:**
 
 * Recent [Docker](https://www.docker.com) version (Docker v20.10+)
-* Terminal access on your node and CLI familiarity
+* Terminal access on your node and cli familiarity
 * [MetaMask](https://metamask.io) (or equivalent) connected to the Gnosis Chain with 1 GNO per validator and a small amount of xDai for transaction costs.
 
-## 1) Setup and run a Gnosis Chain (formerly xDai) node&#x20;
+## 1) Setup and run a Gnosis Chain (formerly xDai) Node&#x20;
 
 {% hint style="info" %}
 This process is optional but recommended.
 {% endhint %}
 
-While not mandatory (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain node to increase decentralization. You can run the GC client on the same machine where you run the Gnosis Beacon Chain client or choose a different setup.
+While not mandatory (public RPC endpoint connection is possible), we encourage users to also run a Gnosis Chain L1 node to increase decentralization. You can run the GC client on the same machine where you run the Gnosis Beacon Chain client or choose a different setup.
 
 Select either OpenEthereum or Nethermind as your client of choice. Follow these instructions to get started:
 
 * [Nethermind](../../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
 * [OpenEthereum](../../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
-Once your node is setup, take note of the RPC endpoint -  you will need it later in the setup. This is typically `http://x.x.x.x:8545` where `x.x.x.x` is your instance ip.
+Once your node is setup, take note of the RPC endpoint -  you will need it later in the setup. This is typically defaulted to `http://x.x.x.x:8545` where `x.x.x.x` is your instance ip.&#x20;
 
 Additional client RPC endpoint info:
 
@@ -85,7 +85,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
    1. `NUM` The number of signing keys (validators) to generate.
    2. `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
    3. `WITHDRAWAL_ADDRESS`  Use this parameter to provide a regular Gnosis Chain `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
-   4. _`/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. Or, to create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`_
+   4. `/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. Or, to create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`
    5. More details about command line arguments can be found[ here.](https://github.com/gnosischain/validator-data-generator/)
 
 ```
@@ -111,13 +111,13 @@ docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
 Following execution, the path you defined for `/path/to/validator_keys` will contain the keystores and `deposit_data*.json` file.&#x20;
 
 {% hint style="info" %}
-Note: _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located where you set `path/to/`_
+Note: _The output will be "Success! Your keys can be found at: /app/validator\_keys/validator\_keys". However, the validator\_keys folder will be located wherever you set `path/to/`_
 {% endhint %}
 
 ## 3) Choose Your Beacon Chain Client & Import Validator Keys
 
 {% hint style="info" %}
-To begin, determine which client you want to run, Lighthouse or Prysm. Instructions differ for the 2 clients.
+To begin, determine which client you want to run, [Lighthouse ](https://lighthouse.sigmaprime.io)or [Prysm](https://prysmaticlabs.com). Instructions differ for the 2 clients.
 
 Make sure your machine conforms to the [Technical Requirements](../technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
 
@@ -126,7 +126,7 @@ Make sure your machine conforms to the [Technical Requirements](../technical-req
 
 ### Prysm
 
-The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however, the original Prysm binary will not work as expected for the Gnosis Chain implementation.
+The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however, **the original Prysm binary will not work as expected for the Gnosis Chain - use the binary below**.
 
 1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
 2.  Clone the repo that includes the required configs.
@@ -140,7 +140,7 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as wallet\_password.txt. This password will be used by Prysm to access the private keys of validators following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
 7. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
-   2. If you are running a GC node on the same machine as your Prysm setup, you can include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545 to access. [More Details](gc-and-gbc-running-on-the-same-machine.md).
+   2. If you are running a GC node on the same machine as your Prysm setup, you can include a host gateway parameter into your docker-compose file then set `XDAI_RPC_URL=`http://host.docker.internal:8545 to access. [More Details](gc-and-gbc-running-on-the-same-machine.md).
    3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
    4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
 8.  Run the following command to import all added keystore files:
@@ -151,7 +151,7 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 
 ### Lighthouse
 
-The Lighthouse client has been modified to account for consensus parameters specific to the Gnosis Chain. The original Lighthouse binary will not work; use the configured client below.
+The Lighthouse client has been modified to account for consensus parameters specific to the Gnosis Chain. **The original Lighthouse binary will not work; use the configured client below.**
 
 1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
 2.  Clone the repo that includes the required configs.
@@ -160,7 +160,7 @@ The Lighthouse client has been modified to account for consensus parameters spec
     git clone https://github.com/gnosischain/lighthouse-launch.git gbc
     ```
 3. Switch to the cloned directory: `cd gbc`.
-4. Copy validators’ keystore files generated on _the Step 2_ to the `keys/validator_keys` directory. Ensure that copied keystores are only used on a single node.
+4. Copy validators’ keystore files generated on _the Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
 5. Write the keystore password to the `keys/keystore_password.txt` file.
 6. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
