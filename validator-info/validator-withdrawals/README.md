@@ -12,5 +12,5 @@ While the exact list of withdrawal steps is still unknown, it will likely includ
 
 1. Exit your validator from the beacon chain.
 2. Wait for a reasonable delay (few hours) due to protocol-level delays and finalisations.
-3. Send a withdrawal request (ie a signed message in the beacon chain or an execution layer transaction with the exit proof)
-4. “Pull” your validator balance from the execution layer by submitting a transaction to the system contract.
+3. Send a withdrawal request (ie a signed message in the beacon chain or an execution layer transaction with the exit proof).
+4. Pull your validator balance from the execution layer by submitting a transaction to the system contract.

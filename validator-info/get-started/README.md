@@ -46,7 +46,7 @@ Select either OpenEthereum or Nethermind as your client of choice. Follow these 
 * [Nethermind](../../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
 * [OpenEthereum](../../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
-Once your node is setup, take note of the RPC endpoint -  you will need it later in the setup. This is typically defaulted to `http://x.x.x.x:8545` where `x.x.x.x` is your instance ip.&#x20;
+Once your node is setup, take note of the RPC endpoint -  you will need it later in the setup. The default is typically `http://x.x.x.x:8545` where `x.x.x.x` is your instance ip.&#x20;
 
 Additional client RPC endpoint info:
 
@@ -85,7 +85,7 @@ Securely backup your mnemonic, keystores, and password and keep in a safe place.
    1. `NUM` The number of signing keys (validators) to generate.
    2. `START_NUM` Index for the first validator key. If this is the first time generating keys with this mnemonic, use 0. If keys were previously generated with this mnemonic, use the subsequent index number (eg, if 4 keys have been generated before (keys #0, #1, #2, #3, then enter 4 here).
    3. `WITHDRAWAL_ADDRESS`  Use this parameter to provide a regular Gnosis Chain `0x` address for mGNO withdrawal. This parameter can also be omitted to generate withdrawal credentials with the mnemonic-derived withdrawal public key in the [EIP-2334 format](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters) (Eth2 address format). Withdrawals will not be available until after the merge.
-   4. `/path/to/` should be replaced with a **valid and existing path** where you want to create the validator\_keys folder. Or, to create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`
+   4. `/path/to/` should be replaced with a valid and existing path where you want to create the validator\_keys folder. Or, to create the validator\_keys folder in your current working directory, use `$(PWD)/validator_keys:/app/validator_keys`
    5. More details about command line arguments can be found[ here.](https://github.com/gnosischain/validator-data-generator/)
 
 ```
@@ -137,12 +137,12 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 3. Switch to the cloned directory: `cd gbc`.
 4. Copy validators’ keystore files generated in _Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
 5. Write the keystore password to the `keys/keystore_password.txt` file.
-6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as wallet\_password.txt. This password will be used by Prysm to access the private keys of validators following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
+6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as `wallet_password.txt`. This password will be used by Prysm to access the validator's private keys following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
 7. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node and `XDAI_PUBLIC_RPC` url in the config. Other values can remain unchanged.
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
    2. If you are running a GC node on the same machine as your Prysm setup, you can include a host gateway parameter into your docker-compose file then set `XDAI_RPC_URL=`http://host.docker.internal:8545 to access. [More Details](gc-and-gbc-running-on-the-same-machine.md).
    3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
-   4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
+   4. If using a 3rd party node provider, set `XDAI_RPC_URL`=https://\<your-endpoint>&#x20;
 8.  Run the following command to import all added keystore files:
 
     ```
@@ -166,10 +166,10 @@ The Lighthouse client has been modified to account for consensus parameters spec
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
    2. If you are running a GC node on the same machine as your Lighthouse setup, you will need to include a host gateway parameter into your docker-compose file and set `XDAI_RPC_URL=`http://host.docker.internal:8545. [More Details](gc-and-gbc-running-on-the-same-machine.md).
    3. If using the public RPC, you can set `XDAI_RPC_URL`=[https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
-   4. If using a 3rd party node provider, set `XDAI_RPC`\_URL=https://\<your-endpoint>&#x20;
-   5. To set fallback IP(s), use comma-separated RPC urls for the XDAI\_RPC\_URL variable. This is useful if your node goes offline. For example:
+   4. If using a 3rd party node provider, set `XDAI_RPC_URL`=https://\<your-endpoint>&#x20;
+   5. To set fallback IP(s), use comma-separated RPC urls for the `XDAI_RPC_URL` variable. This is useful if your node goes offline. For example:
       1. &#x20;`XDAI_RPC`\_URL=https://\<your-endpoint>, [https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;
-7.  Run the following command to import and all added keystore files:
+7.  Run the following command to import all added keystore files:
 
     ```
     docker-compose up validator-import; docker-compose down
@@ -186,7 +186,7 @@ docker-compose up -d validator
 
 Observe the logs by `docker-compose logs -f node` to check that the node started successfully.
 
-A similar command can be used to look at the validator process logs: `docker-compose logs -f validator`. But since deposits have not been made to the validators yet, there should not be much activity yet.
+A similar command can be used to look at the validator process logs: `docker-compose logs -f validator`. But since deposits have not been made to the validators yet, there should not be much activity.
 
 ## 5) Make a Deposit
 

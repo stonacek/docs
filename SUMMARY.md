@@ -14,7 +14,7 @@
     * [GC and GBC running on the same machine](validator-info/get-started/gc-and-gbc-running-on-the-same-machine.md)
   * [Validator Deposits](validator-info/validator-deposits/README.md)
     * [Safety Instructions for the Deposit via Deposit App](validator-info/validator-deposits/safety-instructions-for-the-deposit-via-deposit-app.md)
-    * [Manual Method](validator-info/validator-deposits/manual-method.md)
+    * [Manual Deposit Method](validator-info/validator-deposits/manual-deposit-method.md)
     * [Node Monitoring](validator-info/validator-deposits/node-monitoring.md)
   * [Validator Withdrawals](validator-info/validator-withdrawals/README.md)
     * [Voluntary Exit](validator-info/validator-withdrawals/voluntary-exit.md)

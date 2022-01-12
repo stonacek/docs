@@ -4,7 +4,7 @@
 Deposits occur on the Gnosis Chain (formerly xDai Chain). **If you have GNO on Ethereum mainnet, you will need to bridge it to GC**.&#x20;
 
 * [Use the OmniBridge](https://omni.xdaichain.com/bridge) to move GNO from Ethereum to GNO on GC.&#x20;
-* Add Gnosis Chain Network to your wallet with [https://chainlist.org/](https://chainlist.org) or [using these manual instructions](https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup).
+* Add Gnosis Chain Network to your wallet with [https://chainlist.org/](https://chainlist.org) or [with these manual instructions](https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup).
 {% endhint %}
 
 Once you have followed the steps to [Get Started](../get-started/) and your Beacon Chain node is running, you will make a deposit of **32 mGNO for each validator**. You can make a bulk deposit for up to 128 validators at a time.
@@ -49,7 +49,7 @@ If you don't see the new amount of mGNO, refresh the application.
 
 ![](../../.gitbook/assets/dep-1.png)
 
-2\) App will validate the json file and with the number of validator deposits and required mGNO to deposit. Click **Deposit** to continue.
+2\) The app will validate the json file and list the number of validator deposits and required mGNO to deposit. Click **Deposit** to continue.
 
 ![](../../.gitbook/assets/dep3.png)
 
@@ -70,7 +70,7 @@ If you don't see the new amount of mGNO, refresh the application.
 {% hint style="info" %}
 Following a successful deposit, the Gnosis Beacon Chain will wait for 1024 Gnosis Chain blocks plus up to 64 Gnosis Beacon Chain epochs before adding validators to the pool. **This means it will take approximately 1.5 hours before the validators start proposing and attesting blocks on the Gnosis Chain.**
 
-Once live, you can view your validator(s) on the explorer. Copy the pubkey(s) from your deposit\_data.json file (a key will be generated for each validator) and paste into the search box at [https://beacon.gnosischain.com/](https://beacon.gnosischain.com).
+Once live, you can view your validator(s) on the explorer. Copy the pubkey(s) listed in  the deposit\_data.json file (a key will be generated for each validator) and paste into the search box at [https://beacon.gnosischain.com/](https://beacon.gnosischain.com).
 {% endhint %}
 
 \
