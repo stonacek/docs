@@ -125,7 +125,7 @@ To begin, determine which client you want to run, [Lighthouse ](https://lighthou
 
 Make sure your machine conforms to the [Technical Requirements](../technical-requirements.md#beacon-chain-node-requirements) for running a node, including opening the following pair of ports:
 
-* **12000 UDP, 13000 TC**
+* **12000 UDP, 13000 TCP**
 {% endhint %}
 
 ### Prysm
