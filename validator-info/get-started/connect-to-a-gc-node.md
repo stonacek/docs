@@ -1,10 +1,11 @@
----
-description: Connecting to the RPC
----
+# Connect to a GC Node
 
-# GC and GBC running on the same machine
+If you choose not to use the public RPC and want to connect to your own GC node, follow these instructions:
 
+* If using a 3rd party node provider, set `XDAI_RPC_URL`=https://\<your-endpoint>&#x20;
+* If you are running a GC node on the same machine as your Prysm setup, you can include a host gateway parameter into your docker-compose file then set `XDAI_RPC_URL=`http://host.docker.internal:8545 to access. **See details below**
 
+### **Extra Hosts Parameter**
 
 If you are running a GC node on the same machine as your Beacon Chain client, add the `extra_hosts` parameter to your `docker-compose.yml` file to expose the container and connect to the node.&#x20;
 
@@ -42,9 +43,6 @@ services:
 
 You can then set the `XDAI_RPC_URL=`http://host.docker.internal:8545 in your .env file.
 
-{% hint style="info" %}
-If you are running a Nethermind client, you will need to [turn on JSON RPC in the config file](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc).
+If using Lighthouse, you can also set fallback IP(s). Use comma-separated RPC urls for the `XDAI_RPC_URL` variable. This is useful if your node goes offline. For example:
 
-If running the OE client, HTTP listens on port `8545`
-{% endhint %}
-
+* `XDAI_RPC_URL`=https://\<your-endpoint>, [https://rpc.gnosischain.com](https://rpc.gnosischain.com)&#x20;

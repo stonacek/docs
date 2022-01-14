@@ -60,20 +60,6 @@ Press `Ctrl+A+D` to leave the `screen`
 Recommended requirements are met when using DappNode preconfigured hardware or a liquid staking service.
 {% endhint %}
 
-### Gnosis (formerly xDai) Node Requirements
-
-To process validator deposits it is recommended to run your own Gnosis node. It will be possible to link GBC to an existing node through a JSON RPC endpoint, however we recommend running your own node to enhance decentralization. Gnosis Nodes can be run with you choice of 2 clients (OpenEthereum and Nethermind) and the following recommended minimum specs:
-
-* OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
-* CPU: 2 cores
-* RAM: 4GB
-* Disk: 100gb SSD
-* Git installed `git --version`
-
-[-> Nethermind Node Setup](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
-
-[-> OpenEthereum Node Setup ](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
-
 ### Beacon Chain Node Requirements
 
 Minimum & Recommended specifications for running Prysm or Lighthouse clients:
@@ -110,6 +96,22 @@ Minimum & Recommended specifications for running Prysm or Lighthouse clients:
 * 16 GB RAM
 * 256 GB solid state storage
 * 100 Mb/s download, 20 Mb/s upload broadband connection
+
+### Gnosis (formerly xDai) Node Requirements
+
+To process validator deposits it is optional to run your own Gnosis node. It is possible to link GBC to an existing node through a JSON RPC endpoint, and this is the easiest method when you first setup your node. You will be encouraged to change once the merge happens. If you have experience and would prefer to setup your own GC node, here are the instructions.
+
+Gnosis Nodes can be run with you choice of 2 clients (OpenEthereum and Nethermind) and the following recommended minimum specs:
+
+* OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
+* CPU: 2 cores
+* RAM: 4GB
+* Disk: 100gb SSD
+* Git installed `git --version`
+
+[-> Nethermind Node Setup](../clients/gnosis-chain-node-openethereum-and-nethermind/nethermind-node-setup.md)
+
+[-> OpenEthereum Node Setup ](../clients/gnosis-chain-node-openethereum-and-nethermind/openethereum-node-setup.md)
 
 ## Ready to Get Started?
 
