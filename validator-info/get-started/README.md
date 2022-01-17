@@ -1,17 +1,24 @@
 # Get Started
 
-{% hint style="info" %}
-If you are interested in running a node in the future, please [fill out this form](https://airtable.com/shrrzJsRLa767gpcQ) and we will contact you to start the setup.
-{% endhint %}
-
 ## Chain Currently in Beta Deployment
+
+{% hint style="success" %}
+If you are interested in running a node in the future, please **** [**fill out this form**](https://airtable.com/shrrzJsRLa767gpcQ) and we will contact you to start the setup.
+{% endhint %}
 
 {% hint style="warning" %}
 Instructions are in process. If you are not currently working with the team to run a validator, fill out the form above and we will contact you with more information.
 {% endhint %}
 
 {% hint style="info" %}
-DappNode supports the Gnosis Beacon Chain! If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+**Hardware Solutions.**
+
+If preferred, you can use pre-configured hardware to easily run a node with minimal setup.
+
+* **DappNode** supports the Gnosis Beacon Chain! To use services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+* [Avado](https://ava.do) offers an out-of-the-box validator solution.
+
+Otherwise, proceed to the steps below to setup, run, and deposit to your validators.
 {% endhint %}
 
 ## Setup Summary
@@ -21,7 +28,7 @@ Before you begin the setup, please check the [Validator Requirements and Respons
 When you are ready, you will perform the following steps to get things up and running.
 
 {% hint style="warning" %}
-Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This step is for experienced node runners only. To start, it is not needed but will be encouraged once the merge happens. Instructions include a default to connect to the public RPC.
+Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This step is for experienced node runners only. To gebin, it is not needed but will be encouraged for the merge. Instructions below include a default option to connect to the public RPC.
 {% endhint %}
 
 1. [Generate Validator Keystores and Deposit Data](./#2-generate-validator-account-s-and-deposit-data): On an offline machine, generate up to 128 separate validator keys per node.
