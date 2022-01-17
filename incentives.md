@@ -31,3 +31,7 @@ S: Slots in an epoch= 16
 
 N: amount of validators required for the launch = 4096
 {% endhint %}
+
+## Current Yield View
+
+To view the current validator reward percentage and other deposit statistics, see the [Gnosis Beacon Chain Dune Analytics dashboard](https://dune.xyz/maxaleks/Gnosis-Beacon-Chain-\(Deposits\)).&#x20;

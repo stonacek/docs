@@ -16,7 +16,7 @@ Validating GBC only requires the equivalent of a single GNO token\*, opening up 
 _\*1 GNO equivalent. Staking will utilize the mGNO token, where 32 mGNO are equal to 1 GNO._
 {% endhint %}
 
-## Gnosis Chain (Formerly xDai)
+## Gnosis Chain
 
 Gnosis Chain (formerly the xDai Chain) is the associated EVM chain for stable transactions. Gnosis Chain uses the xDai token for transactions and includes a wide-ranging group of projects and users.
 
