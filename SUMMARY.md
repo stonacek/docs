@@ -16,7 +16,7 @@
   * [Validator Deposits](validator-info/validator-deposits/README.md)
     * [Safety Instructions for the Deposit via Deposit App](validator-info/validator-deposits/safety-instructions-for-the-deposit-via-deposit-app.md)
     * [Manual Deposit Method](validator-info/validator-deposits/manual-deposit-method.md)
-    * [Convert mGNO to GNO](validator-info/validator-deposits/convert-mgno-to-gno.md)
+    * [Convert GNO to mGNO](validator-info/validator-deposits/convert-gno-to-mgno.md)
     * [Node Monitoring](validator-info/validator-deposits/node-monitoring.md)
   * [Validator Withdrawals](validator-info/validator-withdrawals.md)
   * [Voluntary Exit](validator-info/voluntary-exit.md)

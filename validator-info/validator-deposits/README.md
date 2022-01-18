@@ -53,6 +53,6 @@ Once live, you can view your validator(s) on the explorer. Copy the pubkey(s)  l
 
 {% endhint %}
 
-## Previous UI for mGNO to GNO swap
+## Previous UI for GNO to mGNO swap
 
-If you need some extra mGNO (for example to top off a balance or for other reasons), you can use the previous swap UI to convert any amount GNO on the Gnosis Chain to mGNO. [Instructions](convert-mgno-to-gno.md). Note that currently there is not a mechanism to swap mGNO back to GNO.&#x20;
+If you need some extra mGNO (for example to top off a balance or for other reasons), you can use the previous swap UI to convert any amount GNO on the Gnosis Chain to mGNO. [Instructions](convert-gno-to-mgno.md). Note that currently there is not a mechanism to swap mGNO back to GNO.&#x20;
