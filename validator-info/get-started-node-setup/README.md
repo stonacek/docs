@@ -1,4 +1,4 @@
-# Get Started
+# Get Started: Node Setup
 
 ## Chain Currently in Beta Deployment
 
@@ -84,7 +84,7 @@ docker run -it --rm -v /path/to/validator_keys:/app/validator_keys \
   --folder=/app/validator_keys --eth1_withdrawal_address=WITHDRAWAL_ADDRESS
 ```
 
-4\.  Choose a secure password and confirm. You will see a mnemonic seed phrase. Write down and store your pwd and mnemonic safely offline.
+4\.  Choose a secure password and confirm. It should be at least 8 characters. You will see a mnemonic seed phrase. Write down and store your pwd and mnemonic safely offline.
 
 ![](../../.gitbook/assets/mnemonic.png)
 

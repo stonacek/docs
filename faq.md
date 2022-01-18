@@ -37,13 +37,11 @@ mGNO is the staking token used by validators in the Gnosis Beacon Chain.&#x20;
 
 ### How do I get mGNO?
 
-mGNO is available through a UI at [https://deposit.gnosischain.com/](https://deposit.gnosischain.com). Go to the **Swap Tab** to swap GNO to mGNO.&#x20;
+mGNO is typically wrapped behind the scenes during a deposit. If you need extra mGNO to top off a balance for example, you can access the previous swap UI at [https://gbc-deposit-old.herokuapp.com/](https://gbc-deposit-old.herokuapp.com).  Go to the **Swap Tab** to swap GNO to mGNO on the Gnosis Chain.&#x20;
 
 ![](<.gitbook/assets/swap-1 (2).png>)
 
 You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
-
-Future functionality will also make the swap more seamless, so that validators will only need to provide GNO and the swap from GNO to mGNO will happen behind the scenes.
 
 ### How much mGNO do I need to stake to become a validator?
 
@@ -51,7 +49,7 @@ Future functionality will also make the swap more seamless, so that validators w
 
 ### Can I swap mGNO back to GNO
 
-No, not currently. Once withdrawals are activated, users will be prompted to swap back to GNO during the withdrawal process.
+No, not currently. Once withdrawals are activated, users will be able to swap back to GNO during the withdrawal process.
 
 ## Nodes & Clients&#x20;
 

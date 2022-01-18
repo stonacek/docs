@@ -10,7 +10,7 @@ Lighthouse is built in Rust under an Apache 2.0 License.
 
 The Lighthouse client has been modified to account for consensus parameters specific to the Gnosis Chain. The original Lighthouse binary will not work with the Gnosis Beacon chain; a configured client is available for users.&#x20;
 
-* [Get Started with Lighthouse](../validator-info/get-started/#lighthouse)
+* [Get Started with Lighthouse](../validator-info/get-started-node-setup/#lighthouse)
 * GBC Lighthouse Repo\
   [https://github.com/gnosischain/lighthouse-launch](https://github.com/gnosischain/lighthouse-launch)
 

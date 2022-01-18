@@ -10,7 +10,7 @@ Prysm is written in Go and released under a GPL-3.0 license.
 
 The Prysm client has been modified to update the go-ethereum library for specifics related to the Gnosis Beacon Chain. The original Prysm binary will not work with the Gnosis Beacon chain; a configured client is available for users.&#x20;
 
-* [Get Started with Prysm on GBC](../validator-info/get-started/#prysm)
+* [Get Started with Prysm on GBC](../validator-info/get-started-node-setup/#prysm)
 * GBC Prysm Repo\
   [https://github.com/gnosischain/prysm-launch](https://github.com/gnosischain/prysm-launch)
 
