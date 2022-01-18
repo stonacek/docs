@@ -1,7 +1,7 @@
 # Manual Deposit Method
 
 {% hint style="info" %}
-A UI is available for conversion and deposits at [https://deposit.gnosischain.com/](https://deposit.gnosischain.com).  If preferred, you can use the methods below to interact with contracts via BlockScout and use the deposit script to complete.
+A UI is available for deposits at [https://deposit.gnosischain.com/](https://deposit.gnosischain.com).  If preferred, you can use the methods below to interact with contracts via BlockScout and use the deposit script to complete.
 {% endhint %}
 
 ### 1) Convert GNO to mGNO
