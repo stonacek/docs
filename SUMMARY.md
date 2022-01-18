@@ -14,7 +14,7 @@
     * [Optional: Setup and run a Gnosis Chain (formerly xDai) Node](validator-info/get-started-node-setup/optional-setup-and-run-a-gnosis-chain-formerly-xdai-node.md)
     * [Connect to a GC Node](validator-info/get-started-node-setup/connect-to-a-gc-node.md)
   * [Validator Deposits](validator-info/validator-deposits/README.md)
-    * [Safety Instructions for the Deposit via Deposit App](validator-info/validator-deposits/safety-instructions-for-the-deposit-via-deposit-app.md)
+    * [Deposit Safety Instructions](validator-info/validator-deposits/deposit-safety-instructions.md)
     * [Manual Deposit Method](validator-info/validator-deposits/manual-deposit-method.md)
     * [Convert GNO to mGNO](validator-info/validator-deposits/convert-gno-to-mgno.md)
     * [Node Monitoring](validator-info/validator-deposits/node-monitoring.md)

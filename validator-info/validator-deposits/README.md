@@ -31,7 +31,7 @@ In this example we use MetaMask.
 
 ![](../../.gitbook/assets/deposit-2.png)
 
-3\) Check that you understand the risks and [ensure you are interacting with the correct contract](safety-instructions-for-the-deposit-via-deposit-app.md) before proceeding.
+3\) Check that you understand the risks and [ensure you are interacting with the correct contract](deposit-safety-instructions.md) before proceeding.
 
 ![](../../.gitbook/assets/deposit-3.png)
 
