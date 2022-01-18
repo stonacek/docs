@@ -119,7 +119,7 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
     git clone https://github.com/gnosischain/prysm-launch.git gbc
     ```
 3. Switch to the cloned directory: `cd gbc`.
-4. Copy validators’ keystore files generated in _Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
+4. Copy validators’ keystore files generated in _Step 1_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
 5. Write the keystore password to the `keys/keystore_password.txt` file.
 6. Generate a wallet password and place it in the `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as `wallet_password.txt`. This password will be used by Prysm to access the validator's private keys following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
 7. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node. Other values can remain unchanged. If you are experienced and want to run your own GC node, [see these instructions to connect to it](connect-to-a-gc-node.md).&#x20;
@@ -141,7 +141,7 @@ The Lighthouse client has been modified to account for consensus parameters spec
     git clone https://github.com/gnosischain/lighthouse-launch.git gbc
     ```
 3. Switch to the cloned directory: `cd gbc`.
-4. Copy validators’ keystore files generated on _the Step 2_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
+4. Copy validators’ keystore files generated on _the Step 1_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**
 5. Write the keystore password to the `keys/keystore_password.txt` file.
 6. Create an `.env` file from the example at `.env.example`. Fill in the valid external `PUBLIC_IP` __ address of your node. Other values can remain unchanged. If you are experienced and want to run your own GC node, [see these instructions to connect to it](connect-to-a-gc-node.md).&#x20;
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
@@ -151,9 +151,9 @@ The Lighthouse client has been modified to account for consensus parameters spec
     docker-compose up validator-import; docker-compose down
     ```
 
-## 4) Run the Beacon Chain node with the attached Validator Process&#x20;
+## 3) Run the Beacon Chain node with the attached Validator Process&#x20;
 
-On the same machine as _Step 3_ run the following commands (works for both Lighthouse and Prysm):
+On the same machine as _Step 2_ run the following commands (works for both Lighthouse and Prysm):
 
 ```
 docker-compose up -d node
@@ -164,7 +164,7 @@ Observe the logs by `docker-compose logs -f node` to check that the node started
 
 A similar command can be used to look at the validator process logs: `docker-compose logs -f validator`. But since deposits have not been made to the validators yet, there should not be much activity.
 
-## 5) Make a Deposit
+## 4) Make a Deposit
 
 Making deposits is a 2 part process. See the [Validator Deposits section](../validator-deposits/) for details.
 
