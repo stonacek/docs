@@ -39,9 +39,17 @@ Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-
 
 ### **Requirements:**
 
-* Recent [Docker](https://www.docker.com) version (Docker v20.10+)
 * Terminal access on your node and cli familiarity
 * [MetaMask](https://metamask.io) (or equivalent) connected to the Gnosis Chain with 1 GNO per validator and a small amount of xDai for transaction costs.
+* Recent [Docker](https://www.docker.com) version (Docker v20.10+)
+* Docker compose 2.2.3 (note default version installed with apt-get gives an error) To fix:
+
+```
+$ sudo apt-get remove docker-compose 
+$ sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+$ sudo chmod +x /usr/local/bin/docker-compose 
+$ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
 
 ## Step 1) Generate Validator Account(s) and Deposit Data
 
