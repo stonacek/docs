@@ -42,7 +42,7 @@ Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-
 * Terminal access on your node and cli familiarity
 * [MetaMask](https://metamask.io) (or equivalent) connected to the Gnosis Chain with 1 GNO per validator and a small amount of xDai for transaction costs.
 * Recent [Docker](https://www.docker.com) version (Docker v20.10+)
-* Docker compose 2.2.3 (note default version installed with apt-get gives an error) To fix:
+* Docker compose 2.2.3 (_note default version installed with apt-get may give an error_) To fix:
 
 ```
 $ sudo apt-get remove docker-compose 
@@ -133,8 +133,10 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
 6. Generate a wallet password and place it in  `./keys/wallet_password.txt`. Create a strong password (1 uppercase, 1 number, 1 special character, at least 8 characters long) using any password generation method and save it as `wallet_password.txt`. This password will be used by Prysm to access the validator's private keys following the import. [More info](https://docs.prylabs.network/docs/wallet/nondeterministic/#usage)
 7. Create an `.env` file from the example at `.env.example` (note the `.` in front makes it hidden, either enable hidden files or use `ls -la` to find). \
    &#x20; \
-   Fill in the valid external `PUBLIC_IP` __ address of your node. Other values can remain unchanged. If you are experienced and want to run your own GC node, [see these instructions to connect to it](connect-to-a-gc-node.md).&#x20;
+   Fill in the valid external `PUBLIC_IP` __ address of your node, this will help other peers find you.&#x20;
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
+   2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**see these instructions to connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.\
+
 8.  Run the following command to import all added keystore files:
 
     ```
@@ -155,10 +157,15 @@ The Lighthouse client has been modified to account for consensus parameters spec
 4. Copy validators’ keystore files generated on _the Step 1_ to the `keys/validator_keys` directory. **Keystores should only be used on a single node.**\
    ****_Note: You may need to_ [_change file ownership parameters_](https://linuxize.com/post/chmod-command-in-linux/) _to copy._
 5. Write the keystore password from Step 1 to  `keys/keystore_password.txt` file (create this file).
-6. Create an `.env` file from the example at `.env.example`. (note the `.` in front makes it hidden, either enable hidden files or use `ls -la` to find). \
-   \
-   Fill in the valid external `PUBLIC_IP` __ address of your node. Other values can remain unchanged. If you are experienced and want to run your own GC node, [see these instructions to connect to it](connect-to-a-gc-node.md).&#x20;
-   1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
+6.  Create an `.env` file from the example at `.env.example`. (note the `.` in front makes it hidden, either enable hidden files or use `ls -la` to find). \
+
+
+    Fill in the valid external `PUBLIC_IP` __ address of your node, this will help other peers find you.&#x20;
+
+    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
+    2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**see these instructions to connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.
+
+
 7.  Run the following command to import all added keystore files:
 
     ```
