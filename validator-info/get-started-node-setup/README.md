@@ -28,7 +28,7 @@ Before you begin the setup, please check the [Validator Requirements and Respons
 When you are ready, you will perform the following steps to get things up and running.
 
 {% hint style="warning" %}
-Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This step is for experienced node runners only. To begin, it is not needed but will be encouraged for the merge. Instructions below include a default option to connect to the public RPC.
+**Optional:**  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-chain-formerly-xdai-node): This step is for experienced node runners only. To begin, it is not needed but will be encouraged for the merge. Instructions below include a default option to connect to the public RPC.
 {% endhint %}
 
 1. [Generate Validator Keystores and Deposit Data](./#2-generate-validator-account-s-and-deposit-data): On an offline machine, generate up to 128 separate validator keys per node.
@@ -42,7 +42,7 @@ Optional:  [Setup and run a Gnosis Chain (GC) Node](./#1-setup-and-run-a-gnosis-
 * Terminal access on your node and cli familiarity
 * [MetaMask](https://metamask.io) (or equivalent) connected to the Gnosis Chain with 1 GNO per validator and a small amount of xDai for transaction costs.
 * Recent [Docker](https://www.docker.com) version (Docker v20.10+)
-* Docker compose 2.2.3 (_note default version installed with apt-get may give an error_) To fix:
+* Docker compose 2.2.3 (_note default version installed with apt-get may give an error_). To fix:
 
 ```
 $ sudo apt-get remove docker-compose 
@@ -118,7 +118,7 @@ Make sure your machine conforms to the [Technical Requirements](../technical-req
 
 ### Prysm
 
-The Prysm client has been modified slightly. The underlying go-ethereum library used for eth1 block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however, **the original Prysm binary will not work as expected for the Gnosis Chain - use the binary below**.
+The Prysm client has been modified slightly. The underlying go-ethereum library used for execution layer block hash calculation is adapted to account for a different block structure. No other changes are made to the client, however, **the original Prysm binary will not work as expected for the Gnosis Chain - use the binary below**.
 
 1. Go to a root directory where the node configuration and data will be stored. E.g. `cd /opt`.
 2.  Clone the repo that includes the required configs.
@@ -135,7 +135,7 @@ The Prysm client has been modified slightly. The underlying go-ethereum library 
    &#x20; \
    Fill in the valid external `PUBLIC_IP` __ address of your node, this will help other peers find you.&#x20;
    1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
-   2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**see these instructions to connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.\
+   2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.\
 
 8.  Run the following command to import all added keystore files:
 
@@ -163,7 +163,7 @@ The Lighthouse client has been modified to account for consensus parameters spec
     Fill in the valid external `PUBLIC_IP` __ address of your node, this will help other peers find you.&#x20;
 
     1. Use the `curl ifconfig.me ; echo ''` command to get the IP of your node.
-    2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**see these instructions to connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.
+    2. Other values can remain unchanged. **If you are experienced and want to run your own GC node,** [**connect to your own node**](connect-to-a-gc-node.md) **** rather than the public RPC.
 
 
 7.  Run the following command to import all added keystore files:

@@ -4,11 +4,11 @@ If you decide to stop validating and disable your node, you can initiate a volun
 
 If you perform a voluntary exit, you **will not be able to withdraw your balance** until the merge is complete and withdrawals are activated.
 
+Voluntary exit procedures vary depending on your client.
+
 {% hint style="warning" %}
 Exits are non-reversible; once you have exited you cannot restart your validator.&#x20;
 {% endhint %}
-
-Voluntary exit procedures vary depending on your client.
 
 ### Prysm
 

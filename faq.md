@@ -12,7 +12,7 @@ Validators propose and vote on blocks to include in the chain. The chain is secu
 
 ### What is the deposit contract?&#x20;
 
-The deposit contract keeps track of validators and staking amounts. The GBC deposit contract is based on [the original Ethereum 2.0 deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity\_deposit\_contract/deposit\_contract.sol), with [some additional functionality](security-audit.md).
+The deposit contract keeps track of validators and staking amounts. The GBC deposit contract is based on [the original Ethereum beacon chain deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity\_deposit\_contract/deposit\_contract.sol), with [some additional functionality](security-audit.md).
 
 * Contract Security Audit by Chainsecurity: [https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/](https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/)&#x20;
 * GBC Contract Address: [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://blockscout.com/xdai/mainnet/address/0x0B98057eA310F4d31F2a452B414647007d1645d9)
@@ -25,7 +25,7 @@ You can view the current reward yield and other statistics on the [Gnosis Beacon
 
 ### How many validator processes can run per node?
 
-It is possible to run multiple validator processes on a single node with GBC. A 4CPU/8GB node handled 256 validators during testing processes, although for higher decentralization it is recommended to run multiple nodes, and in an ideal situation 1 per validator. The safe recommendation for multiple validators per node is 128.
+It is possible to run multiple validator processes on a single node with GBC. A 4CPU/8GB node handled 256 validators during testing processes, although for higher decentralization it is recommended to run multiple nodes for this number of validators. The safe recommendation for multiple validators per node is 128.
 
 ## mGNO
 
@@ -41,7 +41,7 @@ mGNO is typically wrapped behind the scenes during a deposit. If you need extra 
 
 ![](<.gitbook/assets/swap-1 (2).png>)
 
-You must have GNO on the Gnosis Chain (not on the Ethereum mainnet) to convert them to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
+You must have GNO on the Gnosis Chain (**not on the Ethereum mainnet**) to convert to mGNO. You can move GNO from Ethereum to xDai using the [OmniBridge](https://omni.xdaichain.com/bridge).&#x20;
 
 ### How much mGNO do I need to stake to become a validator?
 
@@ -59,9 +59,9 @@ Modified versions of [Lighthouse](clients/lighthouse.md) and [Prysm](clients/pry
 
 ### How long does it take to sync the Gnosis Chain?
 
-Along with running the GBC client you can also consider running a Gnosis Chain Node to connect with (optional - recommended for experienced node runners only).
+Along with running the GBC client you can also consider running a Gnosis Chain Node to connect with (_optional - recommended for experienced node runners only_).
 
-Syncing the [Gnosis Chain using Nethermind or OpenEthereum](clients/gnosis-chain-node-openethereum-and-nethermind/) requires \~40GB (and growing) of data to download. You may encounter some errors during synching. Depending on your setup, you can expect it to take anywhere from a few hours to up to a day.
+Syncing the [Gnosis Chain using Nethermind or OpenEthereum](clients/gnosis-chain-node-openethereum-and-nethermind/) requires \~40GB (and growing) of data to download. You may encounter some errors during synching. Depending on your setup, you can expect it to take anywhere from a few hours to a day or two.
 
 ### Can I use a node provider to run a Gnosis Chain node?
 
@@ -75,17 +75,17 @@ Yes you can. Providers who currently support Gnosis Chain:
 
 ## Can I use DappNode?
 
-Yes! DappNode is a partner and full-featured service provider for the Gnosis Beacon Chain. If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
+Yes! [DappNode](https://dappnode.io) is a partner and full-featured service provider for the Gnosis Beacon Chain. If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
 
 ## Withdrawals
 
 ### When will withdrawals be active?
 
-Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is currently scheduled to occur \~1 week prior to the ETH2 merge (Scheduled for June, 2022).
+Following the merge between Gnosis Beacon Chain and Gnosis Chain. This is currently scheduled to occur \~1 week prior to the Ethereum merge (scheduled for June, 2022).
 
 ### **What are withdrawal credentials?**
 
-[Withdrawal Credentials](https://github.com/ethereum/eth2.0-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) are specified during the key generation process. Currently, there are two types of withdrawals: BLS withdrawal and Eth1 address withdrawal. An Eth1 address is an 0x address you use on current EVM chains such as Gnosis Chain, Ethereum, BSC etc.
+[Withdrawal Credentials](https://github.com/ethereum/eth2.0-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) are specified during the key generation process. Currently, there are two types of withdrawals: BLS withdrawal, and Eth EVM address withdrawal (referred to as `eth1` in the setup process). An Eth1 EVM address is the 0x address you use on current EVM chains such as Gnosis Chain, Ethereum, BSC etc.
 
 1. Eth1 address withdrawal: If you want to withdraw to an EVM chain after the merge, set `--eth1_withdrawal_address <YOUR 0x ADDRESS>` when running the deposit script. **Make sure you control this Eth1 EVM address, as you will use it to initiate a withdrawal.**
 2. BLS withdrawal: If an Eth1 withdrawal address is not specified, the, deposit script generates withdrawal credentials with the withdrawal key derived via mnemonics in [EIP2334](https://eips.ethereum.org/EIPS/eip-2334)  (Eth2 address format) format. If you don't specify a ETH1 withdrawal address it will default to this option. **You will use this mnemonic during the withdrawal process, so be sure to keep it secure.**
@@ -100,7 +100,7 @@ Withdrawals are currently not available, even if you've accidentally sent extra 
 
 ### What types of addresses can be used for withdrawals? EOA, contact, Gnosis Safe, proxy, stub?
 
-**Yes!** It should be safe to use any type of supported withdrawal credentials,  either an ETH1 address (i.e. Gnosis Chain address) or a BLS credential.
+**Yes!** It should be safe to use any type of supported withdrawal credentials, either an ETH EVM - `eth1` - address (i.e. Gnosis Chain address) or a BLS credential.
 
 For BLS withdrawal credentials, make sure to keep the mnemonic phrase from the key generation process. Once withdrawals are enabled, you will need to use it to sign a withdrawal request message.&#x20;
 

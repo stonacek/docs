@@ -2,7 +2,7 @@
 
 ## The Basics
 
-Since GBC is a smaller-stakes environment, it is a great place to refine new skills. Be sure to read instructions carefully and ask questions (dedicated discord channel coming soon) as needed.
+Since GBC is a smaller-stakes environment, it is a great place to refine new skills. Be sure to read instructions carefully and ask questions ([discord channel](https://t.co/yrSN2dS9Z2)) as needed.
 
 * **Using the Terminal**:  You will be required to enter commands into a terminal window. These will be simple copy-paste instructions, but familiarity with using a terminal is helpful.&#x20;
 * **Key Management**: You will use the command line to derive a key-pair for validating blocks as well as a mnemonic you will use later to derive a withdrawal pair. It is important to store these safely (offline highly recommended).
@@ -11,7 +11,7 @@ Since GBC is a smaller-stakes environment, it is a great place to refine new ski
 
 A reliable internet connection is key - bandwidth should not be throttled or capped. Upload bandwidth should be a minimum of 700 MB/hour with increases likely. Brief periods offline may result in small inactivity penalties, but this will be recouped quickly as long as the outage is short.
 
-Note that synching Gnosis Chain (formerly xDai) may take up to 12 hours depending on your setup.&#x20;
+Note that synching the execution layer Gnosis Chain may take up to 12 hours depending on your setup.&#x20;
 
 ### Security
 
@@ -22,7 +22,7 @@ When setting up hardware or a VM, use proper security measures including securin
 
 ### Time Sync
 
-Your clock should by synchronized to prevent skipping block sealing.
+Your clock should be synchronized to prevent skipping block sealing.
 
 &#x20;Enter`timedatectl status` , you should see similar output:
 
@@ -97,11 +97,11 @@ Minimum & Recommended specifications for running Prysm or Lighthouse clients:
 * 256 GB solid state storage
 * 100 Mb/s download, 20 Mb/s upload broadband connection
 
-### Gnosis (formerly xDai) Node Requirements
+### Gnosis Chain Execution Layer Node Requirements
 
-To process validator deposits it is optional to run your own Gnosis node. It is possible to link GBC to an existing node through a JSON RPC endpoint, and this is the easiest method when you first setup your node. You will be encouraged to change once the merge happens. If you have experience and would prefer to setup your own GC node, here are the instructions.
+It is optional to run your own Gnosis node. You can link GBC to an existing node through a JSON RPC endpoint, and this is the easiest method when you first setup your node. You will be encouraged to update your setup once the merge happens. If you have experience and would prefer to setup your own GC node now, here are the instructions.
 
-Gnosis Nodes can be run with you choice of 2 clients (OpenEthereum and Nethermind) and the following recommended minimum specs:
+GC Nodes can be run with you choice of 2 clients (OpenEthereum and Nethermind) and the following recommended minimum specs:
 
 * OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
 * CPU: 2 cores

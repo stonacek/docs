@@ -4,7 +4,7 @@ A security audit for the deposit contract was completed by ChainSecurity. The or
 
 **Audit Report**: [https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/](https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/)
 
-The contract is based on [the original Ethereum 2.0 deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity\_deposit\_contract/deposit\_contract.sol), with extended functionality including:
+The contract is based on [the original Ethereum beacon chain deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity\_deposit\_contract/deposit\_contract.sol), with extended functionality including:
 
 * **ERC20 deposits**: Stakers can deposit ERC20 tokens instead of native tokens.
 * **Batch deposits on top of normal deposits**: Batch deposits are fixed at 32 mGNO per deposit and normal deposits are floored to 1 mGNO.
