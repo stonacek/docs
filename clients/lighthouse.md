@@ -2,7 +2,7 @@
 
 ### Lighthouse
 
-A secure and fast Eth2 client built by Sigma Prime. [More on Lighthouse and Sigma Prime](https://lighthouse.sigmaprime.io/update-00.html)
+A secure and fast consensus layer client built by Sigma Prime. [More on Lighthouse and Sigma Prime](https://lighthouse.sigmaprime.io/update-00.html)
 
 Lighthouse is built in Rust under an Apache 2.0 License.
 

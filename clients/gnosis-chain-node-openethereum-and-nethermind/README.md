@@ -1,8 +1,12 @@
 # Gnosis Chain Node (OpenEthereum & Nethermind)
 
-In addition to running a GBC client, we also recommend running a separate Gnosis Chain Node. Gnosis Chain (formerly xDai Chain) will be used to process validator deposits and later incorporated as a shard.
+{% hint style="info" %}
+This process is optional and suggested for experienced node runners only.
+{% endhint %}
 
-While it is possible to link GBC to an existing node using a JSON RPC endpoint, we recommend running your own node to promote decentralization. Gnosis Nodes can be run with your choice of OpenEthereum or Nethermind with the following recommended minimum specs:
+In addition to running a GBC client, we also recommend running a separate Gnosis Chain Node execution layer client. Gnosis Chain (formerly xDai Chain) will be used to process validator deposits and later incorporated as a shard.
+
+While it is possible to link GBC to an existing node using a JSON RPC endpoint, running your own node to promotes decentralization. Gnosis Nodes can be run with your choice of OpenEthereum or Nethermind with the following recommended minimum specs:
 
 * OS: Ubuntu (Nethermind & OE), Windows & MacOs (Nethermind only)
 * CPU: 2 cores
