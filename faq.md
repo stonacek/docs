@@ -49,7 +49,7 @@ You must have GNO on the Gnosis Chain (**not on the Ethereum mainnet**) to conve
 
 ### Can I swap mGNO back to GNO
 
-No, not currently. Once withdrawals are activated, users will be able to swap back to GNO during the withdrawal process.
+No, not currently. Once withdrawals are activated, mGNO will be swapped back to GNO during the withdrawal process.
 
 ## Nodes & Clients&#x20;
 
