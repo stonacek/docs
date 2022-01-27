@@ -2,23 +2,26 @@
 
 ## Chain Currently in Beta Deployment
 
-{% hint style="success" %}
+{% hint style="info" %}
+**Info Form**\
 If you are interested in running a node in the future, please **** [**fill out this form**](https://airtable.com/shrrzJsRLa767gpcQ) and we will contact you to start the setup.
 {% endhint %}
 
-{% hint style="warning" %}
-Instructions are in process. If you are not currently working with the team to run a validator, fill out the form above and we will contact you with more information.
-{% endhint %}
-
-{% hint style="info" %}
-**Hardware Solutions.**
-
-If preferred, you can use pre-configured hardware to easily run a node with minimal setup.
+{% hint style="success" %}
+**Hardware Solutions**\
+****If preferred, you can use pre-configured hardware to easily run a node with minimal setup.
 
 * **DappNode** supports the Gnosis Beacon Chain! To use services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
 * [Avado](https://ava.do) offers an out-of-the-box validator solution.
 
 Otherwise, proceed to the steps below to setup, run, and deposit to your validators.
+{% endhint %}
+
+{% hint style="success" %}
+**Easy Guide**\
+​If you prefer a beginner-friendly walkthrough from start to finish, this excellent deployment guide from community member [GLCStaked ](https://twitter.com/GLCstaked)goes in-depth on setting up your environment / firewalls and explains commands in more detail. The guide uses Nethermind + Lighthouse.
+
+:green\_book:[Easy Guide to Running a Gnosis Validator ](https://mirror.xyz/0xf3bF9DDbA413825E5DdF92D15b09C2AbD8d190dd/wkE51RqApadbSW1GQartYJ5Jz71mnz2y60TNu3XNtNM)
 {% endhint %}
 
 ## Setup Summary
