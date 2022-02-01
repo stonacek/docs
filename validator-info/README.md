@@ -1,6 +1,6 @@
 # Validator Info
 
-The Gnosis Beacon Chain is currently in alpha deployment with a subset of validators.&#x20;
+The Gnosis Beacon Chain is currently in beta deployment with a subset of validators.&#x20;
 
 Please see the [Validator Requirements](validator-requirements-and-responsibilities.md) and [Technical Requirements](technical-requirements.md) to learn more about expectations and what you will need to become a validator.
 

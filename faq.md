@@ -61,7 +61,7 @@ Modified versions of [Lighthouse](clients/lighthouse.md) and [Prysm](clients/pry
 
 Along with running the GBC client you can also consider running a Gnosis Chain Node to connect with (_optional - recommended for experienced node runners only_).
 
-Syncing the [Gnosis Chain using Nethermind or OpenEthereum](clients/gnosis-chain-node-openethereum-and-nethermind/) requires \~40GB (and growing) of data to download. You may encounter some errors during synching. Depending on your setup, you can expect it to take anywhere from a few hours to a day or two.
+Syncing the [Gnosis Chain using Nethermind or OpenEthereum](clients/gnosis-chain-node-openethereum-and-nethermind/) requires \~40GB (and growing) of data to download. You may encounter some errors during synching. Depending on your setup, you can expect it to take anywhere from a few hours to several days.
 
 ### Can I use a node provider to run a Gnosis Chain node?
 
