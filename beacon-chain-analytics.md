@@ -13,3 +13,9 @@ Nodewatch at [https://nodewatch.gnosischain.com/](https://nodewatch.gnosischain.
 Miga Labs dashboard at [https://migalabs.es/crawler/gnosis-dashboard](https://migalabs.es/crawler/gnosis-dashboard) provides data on geographic node distribution as well as attestations/minute and other useful stats.
 
 ![](.gitbook/assets/miga.png)
+
+### Dune Analytics
+
+Our [Dune Analytics Dashboard](https://dune.xyz/maxaleks/Gnosis-Beacon-Chain-\(Deposits\)) tracks the number of validators and validator deposits on the GBC.
+
+![](.gitbook/assets/dune-1.png)
